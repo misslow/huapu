@@ -1,0 +1,217 @@
+*{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+html{
+	background: #FFFFFF;
+	font-family: "寰蒋闆呴粦";
+}
+a,a:hover,a:link,a:active,a:visited {
+	text-decoration: none;
+}
+/** LAYOUT Style **/
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.bc{margin-left:auto; margin-right:auto;}
+.fl{float:left; display:inline;}
+.fr{float:right; display:inline;}
+.cb{clear:both;}
+.cl{clear:left;}
+.cr{clear:right;}
+.cbo{overflow:hidden; zoom:1;}
+.clearfix:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.clearfix{display:inline-block}
+
+.clearfix{display:block;}
+.vm{vertical-align:middle;}
+.pr{position:relative;}
+.pa{
+	position:absolute;
+	
+}
+.abs-right{position:absolute; right:0;}
+.zoom{zoom:1;}
+.hidden{visibility:hidden;display:none!important;}
+.none{display:none;}
+.fb{
+    font-weight: bold;
+}
+.fn{
+    font-weight:normal;
+}
+/*phone*/
+html{
+        box-sizing: border-box;
+
+    }
+/*.....................phone font-size set....................*/
+    div{
+        font-size: 12px;
+    }
+    [data-dpr="2"] div{
+        font-size: 24px;
+    }
+    [data-dpr="3"] div{
+        font-size: 36px;
+    }
+
+    .font14{ 
+        font-size: 14px;
+    }
+    [data-dpr="2"] .font14{
+        font-size: 28px;
+    }
+    [data-dpr="3"] .font14{
+        font-size: 42px;
+    }
+
+    .font16{
+        font-size: 16px;
+    }
+    [data-dpr="2"] .font16{
+        font-size: 32px;
+    }
+    [data-dpr="3"] .font16{
+        font-size: 48px;
+    }
+
+    .font18{
+        font-size: 12px;
+    }
+    [data-dpr="2"] .font18{
+        font-size: 24px;
+    }
+    [data-dpr="3"] .font18{
+        font-size: 36px;
+    }
+
+    .font20{
+        font-size: 12px;
+    }
+    [data-dpr="2"] .font20{
+        font-size: 24px;
+    }
+    [data-dpr="3"] .font20{
+        font-size: 40px;
+    }
+    .font22{
+        font-size: 12px;
+    }
+    [data-dpr="2"] .font22{
+        font-size: 22px;
+    }
+    [data-dpr="3"] .font22{
+        font-size: 44px;
+    }
+    .font24{
+        font-size: 12px;
+    }
+    [data-dpr="2"] .font24{
+        font-size: 24px;
+    }
+    [data-dpr="3"] .font24{
+        font-size: 36px;
+    }
+    .font26{
+        font-size: 13px;
+    }
+    [data-dpr="2"] .font26{
+        font-size: 26px;
+    }
+    [data-dpr="3"] .font26{
+        font-size: 39px;
+    }
+    .font28{
+        font-size: 14px;
+    }
+    [data-dpr="2"] .font28{
+        font-size: 28px;
+    }
+    [data-dpr="3"] .font28{
+        font-size: 42px;
+    }
+
+    .font30{
+        font-size: 15px;
+    }
+    [data-dpr="2"] .font30{
+        font-size: 30px;
+    }
+    [data-dpr="3"] .font30{
+        font-size: 45px;
+    }
+    .font32{
+        font-size: 16px;
+    }
+    [data-dpr="2"] .font32{
+        font-size: 32px;
+    }
+    [data-dpr="3"] .font32{
+        font-size: 48px;
+    }
+    .font36{
+        font-size: 18px;
+    }
+    [data-dpr="2"] .font36{
+        font-size: 36px;
+    }
+    [data-dpr="3"] .font36{
+        font-size: 54px;
+    }
+    .font40{
+        font-size: 20px;
+    }
+    [data-dpr="2"] .font40{
+        font-size: 40px;
+    }
+    [data-dpr="3"] .font40{
+        font-size: 60px;
+    }
+    .font48{
+        font-size: 24px;
+    }
+    [data-dpr="2"] .font48{
+        font-size: 48px;
+    }
+    [data-dpr="3"] .font48{
+        font-size: 72px;
+    }
+    .font50{
+        font-size: 25px;
+    }
+    [data-dpr="2"] .font50{
+        font-size: 50px;
+    }
+    [data-dpr="3"] .font50{
+        font-size: 75px;
+    }
+    .font60{
+        font-size: 30px;
+    }
+    [data-dpr="2"] .font60{
+        font-size: 60px;
+    }
+    [data-dpr="3"] .font60{
+        font-size: 90px;
+    }
+    .font72{
+        font-size: 36px;
+    }
+    [data-dpr="2"] .font72{
+        font-size: 72px;
+    }
+    [data-dpr="3"] .font72{
+        font-size: 108px;
+    }
+    .font80{
+        font-size: 40px;
+    }
+    [data-dpr="2"] .font80{
+        font-size: 80px;
+    }
+    [data-dpr="3"] .font80{
+        font-size: 120px;
+    }
+    
