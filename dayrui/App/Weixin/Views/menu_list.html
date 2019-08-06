@@ -1,0 +1,76 @@
+{template "header.html"}
+
+<div class="note note-danger">
+    <p><a href="javascript:dr_admin_menu_ajax('{dr_url($uriprefix.'/sync_index')}');">{dr_lang('立即将菜单同步更新到公众号')}</a></p>
+</div>
+
+<form class="form-horizontal" role="form" id="myform">
+    {dr_form_hidden()}
+    <div class="table-scrollable">
+        <table class="table table-striped table-bordered table-hover table-checkable dataTable">
+            <thead>
+            <tr class="heading">
+                {if $ci->_is_admin_auth('del')}
+                <th class="myselect">
+                    <label class="mt-table mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                        <input type="checkbox" class="group-checkable" data-set=".checkboxes" />
+                        <span></span>
+                    </label>
+                </th>
+                {/if}
+                <th width="70" style="text-align:center"> {dr_lang('排序')} </th>
+                <th class="{dr_sorting('name')}" name="name">{dr_lang('名称')}</th>
+                <th style="text-align:center" width="120">{dr_lang('动作')}</th>
+                <th>{dr_lang('操作')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {loop $list $t}
+            <tr class="odd gradeX" id="dr_row_{$t.id}">
+                {if $ci->_is_admin_auth('del')}
+                <td class="myselect">
+                    <label class="mt-table mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                        <input type="checkbox" class="checkboxes" name="ids[]" value="{$t.id}" />
+                        <span></span>
+                    </label>
+                </td>
+                {/if}
+                <td style="text-align:center">
+                    <input type="text" onblur="dr_ajax_save(this.value, '{dr_url($uriprefix.'/displayorder_edit', ['id'=>$t.id])}')" value="{$t.displayorder}" class="displayorder form-control input-sm input-inline input-mini">
+                </td>
+                <td {if $t.pid} style="padding-left: 30px" {/if}>{dr_html2emoji($t.name)}</td>
+                <td style="text-align:center"> {$menu_type[$t.type]} </td>
+                <td>
+                    {if $ci->_is_admin_auth('edit')}
+                    {if !$t.pid && !$t.type}
+                    <label><a href="javascript:dr_iframe('edit', '{dr_url($uriprefix.'/edit', ['id'=>$t.id,'gid'=>$gid])}', '50%', '50%');" class="btn btn-xs green"> <i class="fa fa-edit"></i> {dr_lang('修改')}</a></label>
+                    <label><a href="{dr_url($uriprefix.'/add', ['pid'=>$t.id,'gid'=>$gid])}" class="btn btn-xs red"> <i class="fa fa-plus"></i> {dr_lang('添加')}</a></label>
+                    {else}
+                    <label><a href="{dr_url($uriprefix.'/edit', ['id'=>$t.id,'gid'=>$gid])}" class="btn btn-xs green"> <i class="fa fa-edit"></i> {dr_lang('修改')}</a></label>
+                    {/if}
+                    {/if}
+                </td>
+            </tr>
+            {/loop}
+            </tbody>
+        </table>
+    </div>
+
+         <div class="row fc-list-footer table-checkable ">
+             <div class="col-md-5 fc-list-select">
+                {if $ci->_is_admin_auth('del')}
+                <label class="mt-table mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" class="group-checkable" data-set=".checkboxes" />
+                    <span></span>
+                </label>
+                <button type="button" onclick="dr_ajax_option('{dr_url($uriprefix.'/del')}', '{dr_lang('你确定要删除它们吗？')}', 1)" class="btn red btn-sm"> <i class="fa fa-trash"></i> {dr_lang('删除')}</button>
+                {/if}
+            </div>
+             <div class="col-md-7 fc-list-page">
+                 {$mypages}
+             </div>
+         </div>
+</form>
+
+
+{template "footer.html"}

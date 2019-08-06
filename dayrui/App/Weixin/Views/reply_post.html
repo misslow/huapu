@@ -1,0 +1,121 @@
+{template "header.html"}
+<div class="note note-danger">
+    <p>多个关键词以分号分开，权重值越大匹配几率越高</p>
+</div>
+
+<form action="" class="form-horizontal" method="post" name="myform" id="myform">
+    {$form}
+    <div class="portlet bordered light myfbody">
+
+            <div class="portlet-title">
+                <div class="caption">
+                    <span class="caption-subject font-green sbold ">{dr_lang('回复规则')}</span>
+                </div>
+                <div class="actions">
+                    <div class="btn-group">
+                        <a class="btn" href="{$reply_url}"> <i class="fa fa-mail-reply"></i> {dr_lang('返回列表')}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="form-body wx-content-field">
+
+                    <div class="form-group" id="dr_row_title">
+                        <label class="col-xs-2 control-label">{dr_lang('规则名称')}</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control input-xlarge" name="data[title]" value="{$title}" id="dr_title" />
+
+                        </div>
+                    </div>
+                    <div class="form-group" id="dr_row_keyword">
+                        <label class="col-xs-2 control-label">{dr_lang('匹配关键字')}</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control input-xlarge" name="data[keyword]" value="{$keyword}" data-role="tagsinput" id="dr_keyword" />
+                        </div>
+                    </div>
+                    <div class="form-group" id="dr_row_displayorder">
+                        <label class="col-xs-2 control-label">{dr_lang('匹配权重值')}</label>
+                        <div class="col-xs-8">
+                            <label><input type="text" class="form-control" name="data[displayorder]" value="{$displayorder}" /></label>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">回复类型</label>
+                            <div class="col-md-9">
+                                <div class=" mt-radio-inline">
+                                    <label class="mt-radio mt-radio-outline"> 文本
+                                        <input type="radio" onclick="dr_content_type(0)" value="0" {if !$tid}checked{/if} name="data[tid]">
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline"> 素材
+                                        <input type="radio" onclick="dr_content_type(1)" value="1" {if $tid}checked{/if} name="data[tid]">
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="form-group mytype" id="dr_type_0" style="display: none">
+                            <label class="col-md-2 control-label">文本内容</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" rows="5" name="value[0]">{$content}</textarea>
+                            </div>
+                    </div>
+                    <div class="form-group mytype" id="dr_type_1" style="display: none">
+                            <label class="col-md-2 control-label">素材选择</label>
+                            <div class="col-md-9">
+                                <div class="input-group input-xlarge">
+                                    <input type="text" class="form-control" name="value[1]" id="gz_value_1" value="{$content}"  >
+                                    <span class="input-group-btn">
+                                            <button class="btn green" type="button"  onclick="dr_get_weixin_content('gz_value_1')">选择素材</button>
+                                    </span>
+                                </div>
+                            </div>
+                    </div>
+
+            </div>
+    </div>
+    <div class="portlet-body form myfooter">
+        <div class="form-actions text-center">
+
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}', 'myform', '2000')" class="btn green"> <i class="fa fa-save"></i> {dr_lang('保存内容')}</button>
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}', 'myform', '2000', '{$reply_url}')" class="btn yellow"> <i class="fa fa-mail-reply-all"></i> {dr_lang('保存并返回')}</button>
+
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    $(function(){
+        dr_content_type('{intval($tid)}');
+    });
+    function dr_content_type(i) {
+        $('.mytype').hide();
+        $('#dr_type_'+i).show();
+    }
+    function dr_get_weixin_content(id) {
+        layer.open({
+                    type: 2,
+                    title: '选择素材',
+                    fix:true,
+                    scrollbar: false,
+                    shadeClose: true,
+                    shade: 0,
+                    area: ['70%', '70%'],
+                    btn: [lang['ok'], lang['esc']],
+                    yes: function(index, layero){
+                        var body = layer.getChildFrame('body', index);
+                        $(body).find('.form-group').removeClass('has-error');
+                        var form2 = $(body).find('#myform').serializeArray();
+                        for ( var p in form2 ){ // 方法
+                            if (form2[p].name == 'id') {
+
+                                $('#'+id).val(form2[p].value);
+                            }
+                        }
+                        //$('#'+id).val(form.cid);
+                        layer.closeAll();
+                    },
+                    content: '{dr_url('weixin/api/content')}&is_ajax=1'
+    });
+    }
+</script>
+{template "footer.html"}

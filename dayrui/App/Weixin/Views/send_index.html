@@ -1,0 +1,136 @@
+{template "header.html"}
+<div class="note note-danger">
+    <p>只能推送给48小时内互动过的粉丝</p>
+</div>
+
+<form action="" class="form-horizontal" method="post" name="myform" id="myform">
+    {$form}
+    <div class="portlet bordered light ">
+        <div class="portlet-title">
+
+            <div class="caption">
+                <span class="caption-subject font-green ">客服群发</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="form-group">
+                <label class="col-xs-2 control-label">接收粉丝</label>
+                <div class="col-xs-8">
+                    <div class=" mt-radio-inline">
+                        <label class="mt-radio mt-radio-outline"> 全部粉丝【{$ucount}】
+                            <input type="radio" value="0" {if !$uuid}checked{/if} name="data[groupid]">
+                            <span></span>
+                        </label>
+                        {loop $group $v}
+                        <label class="mt-radio mt-radio-outline"> {$v.name}【{$v.count}】
+                            <input type="radio" {if $v.tag == $uuid}checked{/if} value="{$v.tag}" name="data[groupid]">
+                            <span></span>
+                        </label>
+                        {/loop}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label">内容类型</label>
+                <div class="col-xs-8">
+                    <div class=" mt-radio-inline">
+                        <label class="mt-radio mt-radio-outline"> 素材消息
+                            <input type="radio" onclick="dr_content_type(1)" value="1" checked  name="data[type]">
+                            <span></span>
+                        </label>
+                        <label class="mt-radio mt-radio-outline"> 文本消息
+                            <input type="radio" onclick="dr_content_type(0)" value="0"  name="data[type]">
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="portlet bordered light myfbody">
+        <div class="portlet-title">
+
+            <div class="caption">
+                <span class="caption-subject font-green ">消息内容</span>
+            </div>
+        </div>
+        <div class="portlet-body mytype" id="dr_type_1" style="display: none">
+
+            <div class="row table-search-tool">
+                <div class="col-xs-12">
+                    <label>
+                        <select name="search[tid]" class="form-control">
+                            <option value=""> -- </option>
+                            {loop $content_type $tid $name}
+                            <option value="{$tid}" {if $param.tid==$tid}selected{/if}>{$name}</option>
+                            {/loop}
+                        </select>
+                    </label>
+                    <label><i class="fa fa-caret-right"></i></label>
+                    <label><input type="text" class="form-control" value="{$param['keyword']}" name="search[keyword]" /></label>
+
+                    <label><button type="submit" class="btn green btn-sm onloading" name="submit" > <i class="fa fa-search"></i> {dr_lang('搜索')}</button></label>
+                </div>
+            </div>
+            <div class="table-scrollable">
+                <table class="table table-striped table-bordered table-hover table-checkable dataTable">
+                    <thead>
+                    <tr class="heading">
+                        <th class="myselect"></th>
+                        <th width="80" style="text-align:center" >{dr_lang('类型')}</th>
+                        <th>{dr_lang('主题')}</th>
+                        <th width="80" style="text-align:center" >{dr_lang('状态')}</th>
+                        <th width="170" >{dr_lang('发布时间')}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {loop $list $t}
+                    <tr class="odd gradeX" id="dr_row_{$t.id}">
+                        <td class="myselect" style="padding-left:10px !important">
+                            <label class="mt-radio mt-radio-outline">
+                                <input type="radio" name="data[content][1]" value="{$t.id}">
+                                <span></span>
+                            </label>
+                        </td>
+                        <td style="text-align:center"><span class="label label-sm label-default"> {$content_type[$t.tid]} </span></td>
+                        <td>{$t.title}</td>
+                        <td style="text-align:center">
+                            {if !$t.media_id}
+                            <span class="label label-sm label-danger"> {dr_lang('未同步')} </span>
+                            {else}
+                            <span class="label label-sm label-success"> {dr_lang('已同步')} </span>
+                            {/if}</td>
+                        <td>{dr_date($t.inputtime, '', 'red')}</td>
+                    </tr>
+                    {/loop}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="portlet-body mytype" id="dr_type_0" style="display: none">
+
+            <textarea class="form-control" rows="5" name="data[content][0]"></textarea>
+
+        </div>
+    </div>
+    <div class="portlet-body form myfooter">
+        <div class="form-actions text-center">
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}&ac=send', 'myform', '2000')" class="btn green"> <i class="fa fa-send"></i> {dr_lang('发送')}</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(function(){
+        dr_content_type('1');
+    });
+    function dr_content_type(i) {
+        $('.mytype').hide();
+        $('#dr_type_'+i).show();
+    }
+</script>
+
+{template "footer.html"}

@@ -1,0 +1,24 @@
+{template "header.html"}
+
+<script src="{THEME_PATH}assets/js/jquery.insert.js" type="text/javascript"></script>
+<form class="form-horizontal" method="post" role="form" id="myform">
+    {$form}
+    <div class="form-body">
+
+        <div class="form-group" id="dr_row_name">
+            <label class="col-xs-3 control-label ajax_name">{dr_lang('菜单名称')}</label>
+            <div class="col-xs-8">
+                <div class="input-group input-xlarge">
+                    <input type="text" class="form-control" name="data[name]" value="{dr_html2emoji($name)}" id="dr_name" />
+                    <span class="input-group-btn">
+                                    <button class="btn green" type="button"  onclick="dr_insert_emoji('name')"> <i class="fa fa-smile-o"></i> 表情</button>
+                                </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+{template "footer.html"}

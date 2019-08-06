@@ -1,0 +1,34 @@
+{template "header.html"}
+
+<form class="form-horizontal" method="post" role="form" id="myform">
+    {$form}
+    <div class="form-body">
+
+        <div class="form-group" id="dr_row_name">
+            <label class="col-xs-3 control-label ajax_name">{dr_lang('标签名称')}</label>
+            <div class="col-xs-8">
+                <label>
+                <input type="text" class="form-control" id="dr_name" name="data[name]" value="{$name}">
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-3 control-label ajax_name">{dr_lang('绑定用户组')}</label>
+            <div class="col-xs-8">
+                <label>
+                    <select name="data[groupid]" class="form-control">
+                        <option value="0"> -- </option>
+                        {loop $ci->member_cache[group] $t}
+                        <option value="{$t.id}" {if $groupid==$t.id}selected{/if}>{$t.name}</option>
+                        {/loop}
+                    </select>
+                </label>
+                <span class="help-block"> {dr_lang('给微信粉丝分配用户组，用于绑定本站会员的微信粉丝')} </span>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+{template "footer.html"}

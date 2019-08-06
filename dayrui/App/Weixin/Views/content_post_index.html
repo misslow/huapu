@@ -1,0 +1,139 @@
+{template "header.html"}
+<div class="note note-danger">
+    <p>图文消息的封面图、标题必须填写</p>
+</div>
+<script>
+    $(function () {
+        dr_wx_content(1);
+        $('.wx-p-box-title').click(function () {
+            var cid = $(this).attr('cid');
+            $('.wx-p-box-title').removeClass('on');
+            $(this).addClass('on');
+            dr_wx_content(cid);
+        });
+        $('.wx-content-field').click(function () {
+            var cid = $('#dr_wx_cid').val();
+            var img = $('#fileupload_thumb_'+cid+'_files').find('img').attr('src');
+            $('#wx-box-thumb-'+cid).html('<img src="'+img+'">');
+        });
+    });
+    function dr_wx_content(cid) {
+        $('#dr_wx_cid').val(cid);
+        $('.wx-content-field .form-group').hide();
+        $('#dr_row_title_'+cid).show();
+        $('#dr_row_author_'+cid).show();
+        $('#dr_row_thumb_'+cid).show();
+        $('#dr_row_description_'+cid).show();
+        $('#dr_row_content_'+cid).show();
+        $('#dr_row_url_'+cid).show();
+    }
+    function dr_wx_show_title(cid) {
+        $('#wx-box-title-'+cid).html($('#dr_title_'+cid).val());
+    }
+
+</script>
+<style>
+    .wx-p-box .wx-p-box-title {
+        border: 1px solid #e7ecf1;
+        padding: 5px;
+    }
+    .wx-p-box .wx-p-box-title .color-view {
+        height: 100px;
+    }
+    .wx-p-box .wx-p-box-title .color-demo {
+        margin-bottom: 0;
+    }
+    .wx-p-box .on {
+        padding: 9px 9px;
+        border: 2px solid #43b548;
+    }
+    .wx-p-box-otitle {
+        float: left;
+        width: 120px;
+        height: 55px;
+    }
+    .color-demo .color-view {
+        padding:0;
+        text-align: center;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+    .wx-img-prev {
+        width: 60px; height: 60px;overflow: hidden;padding: 0 !important;
+    }
+</style>
+<input id="dr_wx_cid" type="hidden" value="1">
+<form action="" class="form-horizontal" method="post" name="myform" id="myform">
+    {$form}
+    <div class="row myfbody">
+        <div class="col-md-3">
+            <div class="portlet light  bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <span class="caption-subject font-green sbold ">{dr_lang('图文列表')}</span>
+                    </div>
+                </div>
+                <div class="portlet-body wx-p-box">
+                    <div class="wx-p-box-title on" cid="1">
+                        <div class="color-demo">
+                            <div id="wx-box-thumb-1" class="color-view bg-default bg-font-default bold uppercase">
+                                    {if $thumb_1}<img src="{dr_get_file($thumb_1)}">{/if}
+                            </div>
+                            <div id="wx-box-title-1" class="color-info bg-blue-ebonyclay bg-font-grey-cascade c-font-14 sbold"> {if $title_1}{$title_1}{else}这里输入标题{/if} </div>
+                        </div>
+                    </div>
+                    <?php for($i=2;$i<=9;$i++) {
+                        eval('$thumb= $thumb_'.$i.';');
+                        eval('$title= $title_'.$i.';');
+                    ?>
+                    <div class="wx-p-box-title media" cid="{$i}">
+                        <div id="wx-box-thumb-{$i}" class="pull-right bg-default wx-img-prev">
+                            {if $thumb}<img src="{dr_get_file($thumb)}">{/if}
+                        </div>
+                        <div class="media-body wx-p-box-otitle" id="wx-box-title-{$i}">{if $title}{$title}{else}这里输入标题{/if}</div>
+                    </div>
+                    <?php  } ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <span class="caption-subject font-green sbold ">{dr_lang('当前内容')}</span>
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group">
+                            <a class="btn" href="{$reply_url}"> <i class="fa fa-mail-reply"></i> {dr_lang('返回列表')}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <div class="form-body wx-content-field">
+
+                        {$myfield}
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class="portlet-body form myfooter">
+        <div class="form-actions text-center">
+
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}', 'myform', '2000')" class="btn green"> <i class="fa fa-save"></i> {dr_lang('保存内容')}</button>
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}', 'myform', '2000', '{$reply_url}&tid={$tid}')" class="btn yellow"> <i class="fa fa-mail-reply-all"></i> {dr_lang('保存并返回')}</button>
+
+        </div>
+    </div>
+</form>
+
+{template "footer.html"}

@@ -1,0 +1,233 @@
+{template "header.html"}
+
+<div class="note note-danger">
+    <p><a href="javascript:dr_update_cache();">{dr_lang('更改数据之后需要更新缓存之后才能生效')}</a></p>
+</div>
+<form action="" class="form-horizontal" method="post" name="myform" id="myform">
+    {$form}
+    <div class="portlet bordered light myfbody">
+        <div class="portlet-title tabbable-line">
+            <ul class="nav nav-tabs" style="float:left;">
+                <li class="{if $page==0}active{/if}">
+                    <a href="#tab_0" data-toggle="tab" onclick="$('#dr_page').val('0')"> <i class="fa fa-cog"></i> {dr_lang('系统配置')} </a>
+                </li>
+                <li class="{if $page==1}active{/if}">
+                    <a href="#tab_1" data-toggle="tab" onclick="$('#dr_page').val('1')"> <i class="fa fa-commenting"></i> {dr_lang('关注回复')} </a>
+                </li>
+                <li class="{if $page==2}active{/if}">
+                    <a href="#tab_2" data-toggle="tab" onclick="$('#dr_page').val('2')"> <i class="fa fa-search"></i> {dr_lang('内容搜索')} </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+
+
+
+                <div class="tab-pane {if $page==0}active{/if}" id="tab_0">
+                    <div class="form-body">
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">站点共享</label>
+                            <div class="col-md-9">
+                                <input type="checkbox" name="data[share]" value="1" {if $data['share']}checked{/if} data-on-text="{dr_lang('开启')}" data-off-text="{dr_lang('关闭')}" data-on-color="success" data-off-color="danger" class="make-switch" data-size="small">
+                                <span class="help-block">{dr_lang('开启共享之后本站公众号数据将默认为主站数据')}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">强制绑定账号</label>
+                            <div class="col-md-9">
+                                <input type="checkbox" name="data[bang]" value="1" {if $data['bang']}checked{/if} data-on-text="{dr_lang('开启')}" data-off-text="{dr_lang('关闭')}" data-on-color="success" data-off-color="danger" class="make-switch" data-size="small">
+                                <span class="help-block">{dr_lang('开启之后将会提醒他绑定账号账号才能进行自动回复功能')}</span>
+                            </div>
+                        </div>
+                    <div class="form-body " >
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">提醒内容</label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" rows="5" name="data[bang_text]">{$data.bang_text}</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane {if $page==1}active{/if}" id="tab_1">
+                    <div class="form-body">
+
+
+                        <div class="form-body">
+
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">关注时回复</label>
+                            <div class="col-md-9">
+                                <input type="checkbox" name="data[gz]" value="1" {if $data['gz']}checked{/if} data-on-text="{dr_lang('开启')}" data-off-text="{dr_lang('关闭')}" data-on-color="success" data-off-color="danger" class="make-switch" data-size="small">
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">回复类型</label>
+                                <div class="col-md-9">
+                                    <div class=" mt-radio-inline">
+                                        <label class="mt-radio mt-radio-outline"> 文本
+                                            <input type="radio" onclick="dr_content_type(0)" value="0" {if !$data.gz_type}checked{/if} name="data[gz_type]">
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-radio mt-radio-outline"> 素材
+                                            <input type="radio" onclick="dr_content_type(1)" value="1" {if $data.gz_type}checked{/if} name="data[gz_type]">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <span class="help-block">设置用户添加公众帐号好友时，发送的欢迎信息</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-body mytype" id="dr_type_0" style="display: none">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">文本内容</label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" rows="5" name="data[gz_value_0]">{$data.gz_value_0}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-body mytype" id="dr_type_1" style="display: none">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">素材选择</label>
+                                <div class="col-md-9">
+                                    <div class="input-group input-xlarge">
+                                        <input type="text" class="form-control" name="data[gz_value_1]" id="gz_value_1" value="{$data['gz_value_1']}"  >
+                                        <span class="input-group-btn">
+                                            <button class="btn green" type="button"  onclick="dr_get_weixin_content('gz_value_1')">选择素材</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane {if $page==2}active{/if}" id="tab_2">
+                    <div class="form-body">
+
+                             <div class="form-group">
+                            <label class="col-md-2 control-label">搜索时回复</label>
+                            <div class="col-md-9">
+                                <input type="checkbox" name="data[ss]" value="1" {if $data['ss']}checked{/if} data-on-text="{dr_lang('开启')}" data-off-text="{dr_lang('关闭')}" data-on-color="success" data-off-color="danger" class="make-switch" data-size="small">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">搜索模块</label>
+                            <div class="col-md-9">
+                                <div class="mt-checkbox-list">
+                                    {loop $module $t}
+                                    <label class="mt-checkbox mt-checkbox-outline">
+                                        <input type="checkbox" name="data[ss_dir][]" value="{$t.dirname}" {if @in_array($t.dirname, $data.ss_dir)} checked{/if}> {$t.name}
+                                        <span></span>
+                                    </label>
+                                    {/loop}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">回复类型</label>
+                                <div class="col-md-9">
+                                    <div class=" mt-radio-inline">
+                                        <label class="mt-radio mt-radio-outline"> 文本
+                                            <input type="radio" onclick="dr_content_type2(0)" value="0" {if !$data.ss_type}checked{/if} name="data[ss_type]">
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-radio mt-radio-outline"> 素材
+                                            <input type="radio" onclick="dr_content_type2(1)" value="1" {if $data.ss_type}checked{/if} name="data[ss_type]">
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <span class="help-block">当系统没有搜索到任何内容时，不知道该如何回复粉丝的消息时，默认发送的内容</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-body mytypess" id="dr_typess_0" style="display: none">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">文本内容</label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" rows="5" name="data[ss_value_0]">{$data.ss_value_0}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-body mytypess" id="dr_typess_1" style="display: none">
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">素材选择</label>
+                                <div class="col-md-9">
+                                    <div class="input-group input-xlarge">
+                                        <input type="text" class="form-control" name="data[ss_value_1]" id="ss_value_1" value="{$data['ss_value_1']}"  >
+                                        <span class="input-group-btn">
+                                            <button class="btn green" type="button"  onclick="dr_get_weixin_content('ss_value_1')">选择素材</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="portlet-body form myfooter">
+        <div class="form-actions text-center">
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}&page='+$('#dr_page').val(), 'myform', '2000')" class="btn green"> <i class="fa fa-save"></i> {dr_lang('保存')}</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $(function(){
+        dr_content_type('{intval($data.gz_type)}');
+        dr_content_type2('{intval($data.ss_type)}');
+    });
+    function dr_content_type(i) {
+        $('.mytype').hide();
+        $('#dr_type_'+i).show();
+    }
+    function dr_content_type2(i) {
+        $('.mytypess').hide();
+        $('#dr_typess_'+i).show();
+    }
+    function dr_get_weixin_content(id) {
+        layer.open({
+            type: 2,
+            title: '选择素材',
+            fix:true,
+            scrollbar: false,
+            shadeClose: true,
+            shade: 0,
+            area: ['70%', '70%'],
+            btn: [lang['ok'], lang['esc']],
+            yes: function(index, layero){
+                var body = layer.getChildFrame('body', index);
+                $(body).find('.form-group').removeClass('has-error');
+                var form2 = $(body).find('#myform').serializeArray();
+                for ( var p in form2 ){ // 方法
+                    if (form2[p].name == 'id') {
+
+                        $('#'+id).val(form2[p].value);
+                    }
+                }
+                //$('#'+id).val(form.cid);
+                layer.closeAll();
+            },
+            content: '{dr_url('weixin/api/content')}&is_ajax=1'
+        });
+    }
+</script>
+
+{template "footer.html"}

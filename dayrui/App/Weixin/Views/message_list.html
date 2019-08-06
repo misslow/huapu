@@ -1,0 +1,128 @@
+{template "header.html"}
+
+<link href="{THEME_PATH}assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+<link href="{THEME_PATH}assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+<link href="{THEME_PATH}assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
+<link href="{THEME_PATH}assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+<script src="{THEME_PATH}assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.finecms.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    if (App.isAngularJsApp() === false) {
+        jQuery(document).ready(function() {
+            if (jQuery().datepicker) {
+                $('.date-picker').datepicker({
+                    rtl: App.isRTL(),
+                    orientation: "left",
+                    autoclose: true
+                });
+            }
+        });
+    }
+</script>
+
+<div class="row table-search-tool">
+    <form action="{SELF}" method="get">
+        {dr_form_search_hidden()}
+        <div class="col-md-12 col-sm-12">
+            <label>
+                <select name="field" class="form-control">
+                    {loop $field $t}
+                    {if $t.ismain}
+                    <option value="{$t.fieldname}" {if $param.field==$t.fieldname}selected{/if}>{$t.name}</option>
+                    {/if}
+                    {/loop}
+                </select>
+            </label>
+            <label><i class="fa fa-caret-right"></i></label>
+            <label><input type="text" class="form-control" placeholder="" value="{$param['keyword']}" name="keyword" /></label>
+        </div>
+
+         <div class="col-md-12 col-sm-12">
+            <label>
+                <div class="input-group input-medium date-picker input-daterange" data-date="" data-date-format="yyyy-mm-dd">
+                    <input type="text" class="form-control" value="{$param.date_form}" name="date_form">
+                    <span class="input-group-addon"> {dr_lang('到')} </span>
+                    <input type="text" class="form-control" value="{$param.date_to}" name="date_to">
+                </div>
+            </label>
+        </div>
+
+        <div class="col-md-12 col-sm-12">
+            <label><button type="submit" class="btn green btn-sm onloading" name="submit" > <i class="fa fa-search"></i> {dr_lang('搜索')}</button></label>
+        </div>
+    </form>
+</div>
+
+<form class="form-horizontal" role="form" id="myform">
+    {dr_form_hidden()}
+    <div class="table-scrollable">
+        <table class="table table-striped table-bordered table-hover table-checkable dataTable">
+            <thead>
+            <tr class="heading">
+                <th class="myselect">
+                    <label class="mt-table mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                        <input type="checkbox" class="group-checkable" data-set=".checkboxes" />
+                        <span></span>
+                    </label>
+                </th>
+                <th style="text-align:center" width="60" class="{dr_sorting('id')}" name="id">Id</th>
+                <th style="text-align:center" width="70" class="{dr_sorting('openid')}" name="openid">头像</th>
+                <th  width="150" class="{dr_sorting('nikcname')}" name="nikcname">{dr_lang('昵称')}</th>
+                <th width="80" style="text-align:center" class="{dr_sorting('tid')}" name="tid">{dr_lang('类型')}</th>
+                <th width="80" style="text-align:center" class="{dr_sorting('status')}" name="status">{dr_lang('状态')}</th>
+                <th width="150" class="{dr_sorting('inputtime')}" name="inputtime">{dr_lang('录入时间')}</th>
+                <th>{dr_lang('内容')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {loop $list $t}
+            <tr class="odd gradeX" id="dr_row_{$t.id}">
+                <td class="myselect">
+                    <label class="mt-table mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                        <input type="checkbox" class="checkboxes" name="ids[]" value="{$t.id}" />
+                        <span></span>
+                    </label>
+                </td>
+                <td style="text-align:center"> {$t.id}</td>
+                <td style="text-align:center"> <img width="45" class="img-circle" src="{$t.headimgurl}"> </td>
+                <td>{dr_html2emoji($t.nickname)}</td>
+                <td style="text-align:center">{$t.tid_name}</td>
+                <td style="text-align:center">{$t.status_name}</td>
+                <td>{dr_date($t.inputtime, '', 'red')}</td>
+                <td class="member_info_p">
+                    {if $t.tid == 'text'}
+                    <p>{$t.content}</p>
+                     {if $ci->_is_admin_auth('weixin/send/add')}
+                    <p><a href="{dr_url('weixin/send/index', ['uid'=>$t.userid])}" class="btn btn-xs green"> <i class="fa fa-send"></i> {dr_lang('发送消息')}</a></p>
+                    {/if}
+                    {else}
+                    <label><a href="javascript:dr_iframe_show('详情', '{dr_url('weixin/message/show')}&file={$t.file}&tid={$t.tid}');" class="btn btn-xs dark"> <i class="fa fa-search"></i> 查看详情</a></label>
+                     {if $ci->_is_admin_auth('weixin/send/add')}
+                    <label><a href="{dr_url('weixin/send/index', ['uid'=>$t.userid])}" class="btn btn-xs green"> <i class="fa fa-send"></i> {dr_lang('发送消息')}</a></label>
+                    {/if}
+                    {/if}
+                </td>
+            </tr>
+            {/loop}
+            </tbody>
+        </table>
+    </div>
+
+         <div class="row fc-list-footer table-checkable ">
+             <div class="col-md-5 fc-list-select">
+                <label class="mt-table mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" class="group-checkable" data-set=".checkboxes" />
+                    <span></span>
+                </label>
+                
+            <button type="button" onclick="dr_ajax_option('{dr_url($uriprefix.'/del')}', '{dr_lang('你确定要删除它们吗？')}', 1)" class="btn red btn-sm"> <i class="fa fa-trash"></i> {dr_lang('删除')}</button>
+            <button type="button" onclick="dr_admin_menu_ajax('{dr_url($uriprefix.'/update_add')}')" class="btn green btn-sm"> <i class="fa fa-refresh"></i> {dr_lang('一键更新状态')}</button>
+             </div>
+             <div class="col-md-7 fc-list-page">
+                 {$mypages}
+             </div>
+         </div>
+</form>
+
+
+{template "footer.html"}

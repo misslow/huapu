@@ -1,0 +1,145 @@
+{template "header.html"}
+<div class="note note-danger">
+    <p><a href="javascript:dr_update_cache();">{dr_lang('更改数据之后需要更新缓存之后才能生效')}</a></p>
+</div>
+<script type="application/javascript">
+
+</script>
+<form action="" class="form-horizontal" method="post" name="myform" id="myform">
+    {$form}
+    <div class="portlet bordered light myfbody">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject font-green-sharp">
+                    {dr_lang('接口数据')}
+                </span>
+            </div>
+            <div class="actions">
+                <div class="btn-group">
+                    <a class="btn" href="{$reply_url}"> <i class="fa fa-mail-reply"></i> {dr_lang('返回')}</a>
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="form-body">
+
+
+                {if $id}
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Id</label>
+                    <div class="col-md-9">
+                        <div class="form-control-static"><label>{$id}</label></div>
+                    </div>
+                </div>
+                {/if}
+
+                {$myfield}
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">{dr_lang('数据类型')}</label>
+                    <div class="col-md-9">
+                        <div class="mt-radio-inline">
+                            {loop $sjlx $i $t}
+                            <label class="mt-radio">
+                                <input onclick="dr_set_type({$i})" {if intval($content.type) == $i}checked{/if} name="data[content][type]" type="radio" value="{$i}"> {$t}
+                                <span></span>
+                            </label>
+                            {/loop}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group dr_c_value dr_c_value_1 dr_c_value_0"  style="display: none" >
+                    <label class="col-md-2 control-label">{dr_lang('数据内容')}</label>
+                    <div class="col-md-9">
+                        <textarea class="form-control" style="height:160px; width:100%;" name="data[content][data]">{$content.data}</textarea></div>
+
+                </div>
+            </div>
+            <div class="form-group dr_c_value dr_c_value_2"  style="display: none">
+                <label class="col-md-2 control-label">{dr_lang('程序文件')}</label>
+                <div class="col-md-9">
+                    <label>
+                        <?php
+$str = '<select class="form-control" name="data[content][file]"><option value=""> -- </option>';
+                        $files = dr_file_map(APPPATH.'Api/', 1);
+                        if ($files) {
+                        foreach ($files as $t) {
+                        $t && strpos($t, '.php') !== 0 && $str.= '<option value="'.$t.'" '.($content['file'] == $t ? 'selected' : '').'> '.$t.' </option>';
+                        }
+                        }
+                        $str.= '</select>'; echo $str;
+                        ?></label>
+                    <span class="help-block"> {dr_lang('此功能需要有PHP编程经验，自定义程序文件路径：插件目录/Api/**.php')} </span>
+                </div>
+            </div>
+
+            <div class="form-group dr_c_value dr_c_value_3"  style="display: none" >
+                <label class="col-md-2 control-label">{dr_lang('模板标签')}</label>
+                <div class="col-md-9">
+                    <textarea class="form-control" style="height:160px; width:100%;" name="data[content][list]">{$content.list}</textarea></div>
+            </div>
+
+
+            <div class="form-group dr_c_value dr_c_value_4"  style="display: none" >
+                <label class="col-md-2 control-label">{dr_lang('SQL语句')}</label>
+                <div class="col-md-9">
+                    <textarea class="form-control" style="height:160px; width:100%;" name="data[content][sql]">{$content.sql}</textarea>
+                    <span class="help-block"> 只支持MySQL的Select语法 </span>
+                </div>
+            </div>
+
+            <div class="form-group dr_c_value dr_c_value_3 dr_c_value_4"  style="display: none">
+                <label class="col-md-2 control-label">{dr_lang('回调方法')}</label>
+                <div class="col-md-9">
+                    <label><input class="form-control input-large" id="dr_call" type="text" name="data[content][call]" value="{$content.call}"> </label>
+                    <label><a class="btn btn-sm blue" href="javascript:dr_test_call();"> 检测 </a></label>
+                    <span class="help-block"> <a href="javascript:dr_help('351');"> {dr_lang('此功能需要有PHP编程经验，了解回调方法的定义')}</a> </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">{dr_lang('接口状态')}</label>
+                <div class="col-md-9">
+                    <div class="mt-radio-inline">
+                        <label class="mt-radio">
+                            <input  {if !$disabled}checked{/if} name="data[disabled]" type="radio" value="0"> {dr_lang('正常')}
+                            <span></span>
+                        </label>
+                        <label class="mt-radio">
+                            <input  {if $disabled}checked{/if} name="data[disabled]" type="radio" value="1"> {dr_lang('禁用')}
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <div class="portlet-body form myfooter">
+        <div class="form-actions text-center">
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}', 'myform', '2000')" class="btn green"> <i class="fa fa-save"></i> {dr_lang('保存内容')}</button>
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}', 'myform', '2000', '{$post_url}')" class="btn blue"> <i class="fa fa-plus"></i> {dr_lang('保存再添加')}</button>
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}', 'myform', '2000', '{$reply_url}')" class="btn yellow"> <i class="fa fa-mail-reply-all"></i> {dr_lang('保存并返回')}</button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    dr_set_type({intval($content.type)});
+    function dr_set_type(id) {
+        $('.dr_c_value').hide();
+        $('.dr_c_value_'+id).show();
+    }
+    function dr_test_call() {
+        $.ajax({type: "GET",dataType:"json", url: "{dr_url('httpapi/http/call_index')}&name="+$('#dr_call').val(),
+            success: function(json) {
+                dr_cmf_tips(json.code, json.msg);
+            },
+            error: function(HttpRequest, ajaxOptions, thrownError) {
+                dr_ajax_alert_error(HttpRequest, ajaxOptions, thrownError)
+            }
+        });
+    }
+</script>
+{template "footer.html"}

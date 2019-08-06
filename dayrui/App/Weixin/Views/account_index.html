@@ -1,0 +1,117 @@
+{template "header.html"}
+
+<div class="note note-danger">
+    <p><a href="javascript:dr_update_cache();">{dr_lang('更改数据之后需要更新缓存之后才能生效')}</a></p>
+</div>
+<form action="" class="form-horizontal" method="post" name="myform" id="myform">
+    {$form}
+    <div class="portlet bordered light myfbody">
+        <div class="portlet-title tabbable-line">
+            <ul class="nav nav-tabs" style="float:left;">
+                <li class="{if $page==0}active{/if}">
+                    <a href="#tab_0" data-toggle="tab" onclick="$('#dr_page').val('0')"> <i class="fa fa-cog"></i> {dr_lang('账号设置')} </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+
+
+
+                <div class="tab-pane {if $page==0}active{/if}" id="tab_0">
+                    <div class="form-body">
+
+
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">AppId</label>
+                                <div class="col-md-9">
+                                    <input class="form-control input-xlarge" type="text" name="data[appid]" value="{$data['appid']}" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">AppSecret</label>
+                                <div class="col-md-9">
+                                    <input class="form-control input-xlarge" type="text" name="data[appsecret]" value="{$data['appsecret']}" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Token</label>
+                            <div class="col-md-9">
+                                <div class="input-group input-xlarge">
+                                    <input type="text" class="form-control" name="data[token]" id="sys_token" value="{$data['token']}"  >
+                                    <span class="input-group-btn">
+                                        <button class="btn green" type="button"  onclick="dr_to_token()">生成</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">EncodingAESKey</label>
+                            <div class="col-md-6">
+                                <div class="input-group ">
+                                    <input type="text" class="form-control" name="data[aeskey]" id="sys_asckey" value="{$data['aeskey']}"  >
+                                    <span class="input-group-btn">
+                                        <button class="btn green" type="button"  onclick="dr_to_aeskey()">生成</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">服务器地址</label>
+                            <div class="col-md-6">
+                                <p class="form-control-static"> {SITE_URL}index.php?s=weixin </p>
+                            </div>
+                        </div>
+                        {if $access_tocken}
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">接入错误信息</label>
+                            <div class="col-md-6">
+                                <p class="form-control-static" style="color: red;"> {$access_tocken} </p>
+                            </div>
+                        </div>
+                        {/if}
+
+                    </div>
+                </div>
+
+                <div class="tab-pane {if $page==1}active{/if}" id="tab_1">
+                    <div class="form-body">
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="portlet-body form myfooter">
+        <div class="form-actions text-center">
+            <button type="button" onclick="dr_ajax_submit('{dr_now_url()}&page='+$('#dr_page').val(), 'myform', '2000')" class="btn green"> <i class="fa fa-save"></i> {dr_lang('保存')}</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    function dr_to_token() {
+        $.get("{dr_url(APP_DIR.'/api/token')}", function(data){
+            $("#sys_token").val(data);
+        });
+    }
+    function dr_to_aeskey() {
+        $.get("{dr_url(APP_DIR.'/api/asckey')}", function(data){
+            $("#sys_asckey").val(data);
+        });
+    }
+</script>
+
+{template "footer.html"}

@@ -1,0 +1,32 @@
+<div style="text-align:center">
+<p>{$url}</p>
+{if $tid=='image'}
+ <img src="{$url}" width="100%" >
+{elseif $tid=='voice'}
+ 
+ {if strpos($url, 'amr') !== false}
+<button class="icon-audio" id="playerBtn" style="margin:0 5px;cursor:pointer;" playerurl="{$url}">播放</button>  
+<div style="width:1px;height:1px;" id="playerQT">  
+  
+   </div>  
+
+    <script src="{THEME_PATH}assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script>
+//js代码如下。。好吧用到了jquery自己替换吧  
+var playerQT = document.getElementById("playerQT");  
+           $("#playerBtn").bind("click",function(e){  
+               var playerUrl = e.target.getAttribute("playerUrl");  
+               playerAudio(playerUrl);  
+           });  
+           function playerAudio(url){  
+               var html = '<embed width="1px" height="1px" name="plugin" src="'+url+'" type="audio/amr" id="QT_EMB">';  
+               playerQT.innerHTML = html;  
+           }  
+</script>
+{else}
+ <audio src="{$url}" controls preload></audio> 
+{/if}
+{else}
+ <video src="{$url}" controls preload></video> 
+{/if}
+</div>
