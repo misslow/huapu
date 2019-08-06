@@ -1,0 +1,33 @@
+.majorlist image {
+  width: 12rpx;
+  height: 22rpx;
+  margin-right: 12rpx;
+}
+.subjectname {
+  height: 116rpx;
+  padding-left: 30rpx;
+  line-height: 116rpx;
+  border-bottom: 1px solid #f6f6f6;
+  color: #414141;
+  font-size: 34rpx;
+}
+.subname {
+  height: 116rpx;
+  padding-left: 60rpx;
+  line-height: 116rpx;
+  border-bottom: 1px solid #f6f6f6;
+  color: #414141;
+  font-size: 34rpx;
+}
+.majorname {
+  height: 116rpx;
+  padding-left: 60rpx;
+  line-height: 116rpx;
+  border-bottom: 1px solid #f6f6f6;
+  color: #989898;
+  font-size: 34rpx;
+}
+.downimg {
+  width: 22rpx!important;
+  height: 12rpx!important;
+}

@@ -1,0 +1,28 @@
+<view wx:for="{{majorList}}" wx:key="index" class='majorlist'>
+    <!-- 一级目录 -->
+    <view class='subjectname' data-indexone="{{index}}" bindtap="openTwo">
+      <image mode='cover' src='{{libPath}}leftright.png' hidden='{{subtwo == index}}'></image>
+      <image class='downimg' mode='cover' src='{{libPath}}down.png' hidden='{{subtwo != index}}'></image>
+      <text>{{item.name}}</text>
+    </view>
+   <view hidden="{{subtwo != index }}">
+  <!--  <view style=" display: {{subtwo == index ? 'block' : 'none' }} "> -->
+      <view wx:for="{{item.submajor}}" wx:key="index">
+        <!-- 二级目录 -->
+        <view class='subname' data-indextwo='{{index}}' bindtap="openThree">
+          <image mode='cover' src='{{libPath}}leftright.png' hidden='{{subthree == index}}'></image>
+          <image class='downimg' mode='cover' src='{{libPath}}down.png' hidden='{{subthree != index}}'></image>
+          <text>{{item.name}}</text>
+        </view>
+        <!-- 三级目录 -->
+        <view hidden='{{subthree != index}}'>
+        <!-- <view style=" display: {{subthree == index ? 'block' : 'none' }} ">-->
+          <view wx:for="{{item.major}}" wx:key="index" class='majorname'>
+            <navigator url="../news/show?id={{index}}">
+            {{item}}
+            </navigator>
+          </view>
+        </view>
+      </view>
+   </view>
+</view>

@@ -1,0 +1,17 @@
+<view class="login-warp">
+<form bindsubmit="formSubmit">
+<view class="warp-pos">
+ <input  placeholder="请输入用户名" type="text" class="userPwd" bindinput="getUserName" />
+
+</view>
+
+<view class="warp-pos">
+<input placeholder="请输入密码" class="userPwd" bindinput="getUserPwd" password/>
+<image src="../../icons/nosee.png" class="img-pos"></image>
+</view>
+
+<button class="reg-btn" formType="primary" bindtap="login">绑定</button>
+</form>
+
+</view>
+

@@ -1,0 +1,17 @@
+<scroll-view scroll-y="true">
+<block wx:for="{{listData}}">
+<view class="pl-box">
+  <view class="news-title">
+  {{item.note}}
+  </view>
+  <view class="flex-box">
+   <view>{{item.value}}</view>
+   <view class="gray">{{item.inputtime}}</view>
+  </view>
+</view>
+</block>
+</scroll-view>
+<view class="pl-bottom">
+<view hidden="{{hidden}}" class="hidden" wx:if="{{hasMore!='true'}}"><image src="../../icons/waiting.gif" /> 正在加载....</view>
+<view hidden="{{hidden}}" class="hidden" wx:else>没有更多数据了....</view>
+</view>

@@ -1,0 +1,23 @@
+
+
+
+
+<view class="login-warp">
+<form bindsubmit="formBindsubmit">
+
+<view class="warp-pos">
+<input placeholder="输入充值金额" class="userPwd" name="money" value="" />
+</view>
+
+
+<button class="login-btn" formType="submit">微信充值</button>
+</form>
+
+</view>
+
+
+
+
+
+
+
