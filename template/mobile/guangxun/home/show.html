@@ -1,0 +1,97 @@
+
+{template "header.html"}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>习近平在江苏徐州考察 强调紧扣新时代要求推动改革发展 - 国资要闻 - 光迅科技</title>
+    <meta name="keywords" content="国资要闻" />
+    <meta name="description" content="习近平在江苏徐州市考察时强调深入学习贯彻党的十九大精神紧扣新时代要求推动改革发展" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/base.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/index.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/global.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/layout.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/resetcommon.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/style1.css" />
+    <!--[if IE 7]>
+    <link type="text/css" rel="stylesheet" href="/statics/default/css/ie7.css" />
+    <![endif]-->
+
+
+<!-- <div class="top">
+    <div class="tmid clearfix">
+        <div class="tmcontent fr clearfix">
+            <form id="form3" action="http://www.accelink.com/index.php?m=Search&a=search" method="get">
+            <input type="hidden" name="m" value="Search">
+            <input type="hidden" name="a" value="search">
+                <img src="/statics/default/images/topimg.jpg"/>
+                <span><a href="http://en.accelink.com/">ENGLISH</a></span>
+                <input class="search" type="text" name="searchs" value="">
+                <input class="dj" type="submit" value="">
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="banner" style="background: url('templates/pc/guangxun/src/images/bg1.png') no-repeat center center;"></div>
+
+<blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow" style="margin-top: 0px;">
+            <a href="/" title="网站首页">网站首页</a>
+            {dr_catpos($catid, '', true, '<a href="[url]">[name]</a>')}
+            
+        </blockquote>
+
+<div class="content10 clearfix">
+    
+    <div class="article-detail shadow">
+                    <div class="article-detail-title">
+                        <div style="font-size: 18px;text-align:center;">{$title}</div>
+                    </div>
+                    <!-- <div class="article-detail-info">
+                        <span>编辑时间：{$updatetime}</span>
+                        <span>作者：{$author}</span>
+                        <span>浏览量：{dr_show_hits($id)}次</span>
+                    </div> -->
+                    <div class="article-detail-content">
+                       {$content}
+                    </div>
+                    <div class="blog-single-foot">
+                        <div class="blog-post-tags">
+                            {loop $keyword_list $name $url}
+                                <a href="{$url}" target="_blank">{$name}</a>
+                            {/loop}
+                        </div>
+                        <!-- <p class="f14" style="margin-top: 10px">
+                            <strong>上一篇：</strong>{if $prev_page}<a href="{$prev_page.url}">{$prev_page.title}</a>{else}没有了{/if}<br>
+                            <strong>下一篇：</strong>{if $next_page}<a href="{$next_page.url}">{$next_page.title}</a>{else}没有了{/if}
+                        </p> -->
+                    </div>
+                </div>
+
+
+</div>
+
+
+
+<script type="text/javascript" src="/statics/default/js/jquery.js"></script>
+<script type="text/javascript" src="/statics/default/js/jquery.SuperSlide.2.1.2.js"></script>
+<script type="text/javascript" src="templates/pc/guangxun/src/js/layout.js"></script>
+<!-- <script type="text/javascript" src="templates/pc/guangxun/src/js/NSW_Details.js"></script> -->
+<!-- <script type="text/javascript" src="templates/pc/guangxun/src/js/MobileRewrite.js"></script> -->
+<script type="text/javascript">
+ //JS代码部分
+$(function(){
+    //点击
+    $.get("/api.php?m=Hits&catid=16&id=200", function (data) {
+        $("#hits").html(data.views);
+    }, "json");
+});
+</script>
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="/statics/default/js/DD_belatedPNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix(".");
+</script>
+<![Endif]-->
+{template "footer.html"}

@@ -1,0 +1,642 @@
+html.home {
+    background: url(../images/tens_2.jpg);
+    background-size: 100% 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+html.home body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.home_scroll {
+    position: absolute;
+    top: 0;
+    bottom: .9rem;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 140;
+}
+
+.body_flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo_title {
+    width: 4.23rem;
+    height: 1.11rem;
+    display: block;
+    margin: .88rem auto 0;
+}
+
+.nav_all {
+    width: 7.48rem;
+    height: 9.33rem;
+    background: url(../images/tens_13.png);
+    background-size: 100% 100%;
+    margin: 0 auto;
+    position: relative;
+    top: -.73rem;
+    overflow: visible;
+    z-index: 98;
+}
+
+.lang {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.nav_all img {
+    position: absolute;
+}
+
+.n1 {
+    width: 1.73rem;
+    height: .74rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2.05rem;
+}
+
+.n2 {
+    width: 1.68rem;
+    height: .69rem;
+    top: 3.13rem;
+    left: 1.9rem;
+}
+
+.n3 {
+    width: 1.68rem;
+    height: .71rem;
+    top: 3.13rem;
+    right: 1.9rem;
+}
+
+.n4 {
+    width: 1.85rem;
+    height: .7rem;
+    top: 4.3rem;
+    left: 1.34rem;
+}
+
+.n5 {
+    width: 1.8rem;
+    height: .7rem;
+    top: 4.3rem;
+    right: 1.34rem;
+}
+
+.n6 {
+    width: 1.7rem;
+    height: .66rem;
+    top: 5.58rem;
+    left: 1.18rem;
+}
+
+.n7 {
+    width: 1.64rem;
+    height: .67rem;
+    top: 5.58rem;
+    right: 1.18rem;
+}
+
+.n8 {
+    width: 1.65rem;
+    height: .67rem;
+    top: 6.89rem;
+    left: 1.13rem;
+}
+
+.n9 {
+    width: 1.63rem;
+    height: .64rem;
+    top: 6.89rem;
+    right: 1.13rem;
+}
+
+.n10 {
+    width: 1.77rem;
+    height: 1.52rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5.48rem;
+}
+
+.go_test {
+    width: 3.04rem;
+    height: .84rem;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    top: -1.93rem;
+    z-index:140;
+}
+
+
+.footer {
+    height: .9rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    background: url(../images/tens_11.png);
+    background-size: 100% 100%;
+    display: flex;
+    z-index: 150;
+}
+
+.footer>a,
+.footer>span {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.icon_nav {
+    width: .38rem;
+    height: .36rem;
+    margin-bottom: .06rem;
+}
+
+.icon_nav_text {
+    font-size: .22rem;
+    color: #fff;
+}
+
+.footer>a.left_line {
+    background: url(../images/tens_15.png) right center no-repeat;
+    background-size: 1px .48rem;
+}
+
+.footer>span.left_line {
+    background: url(../images/tens_16.png) 98% 85% no-repeat;
+    background-size: .15rem .15rem;
+}
+
+.footer>a.right_line {
+    background: url(../images/tens_15.png) left center no-repeat;
+    background-size: 1px .48rem;
+}
+
+.up_nav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    overflow: hidden;
+    background: url(../images/tens_17.png) no-repeat;
+    background-size: 100% 100%;
+    top: 0;
+    transform: translateY(-100%);
+    z-index: 150;
+    display: none;
+}
+
+.up_nav>a {
+    display: block;
+    text-align: center;
+    font-size: .22rem;
+    color: #fff;
+    border-bottom: 1px solid #0D6C8D;
+    padding: .15rem 0;
+    text-align: center;
+}
+
+.search_open_tab {
+    width: 156px;
+}
+
+.search_open_tabm {
+    flex: 1;
+}
+
+.ten_title {
+    height: 3.06rem;
+    background: url(../images/tens_23.png) center bottom no-repeat;
+    background-size: 100% 2.62rem;
+    overflow: hidden
+}
+
+.ten_title_img {
+    display: block;
+    width: 5.14rem;
+    height: 1.35rem;
+    margin: .16rem auto 0;
+}
+
+.show_list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.show_one {
+    height: .66rem;
+    background: url(../images/tens_18.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: .18rem;
+    padding-left: .3rem;
+    display: flex;
+    align-items: center;
+}
+
+.show_one>div {
+    width: 4.4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #00f6ff;
+    font-size: .3rem;
+}
+
+.show_one>div a
+{
+    color: #00f6ff;
+}
+
+.show_one img {
+    width: .34rem;
+    height: .34rem;
+    margin-right: .2rem;
+}
+
+.info_list {
+    overflow: hidden;
+}
+
+.info_list li {
+    border-bottom: solid #F4F4F4 .03rem;
+    padding: .25rem .25rem;
+}
+
+.info_list li a {
+    display: block;
+    background: url(../image/tens_24.png) left center no-repeat;
+    background-size: .36rem .36rem;
+    padding-left: .5rem;
+    color: #000000;
+    font-size: .3rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.act {
+    padding: .2rem;
+}
+
+.act_title {
+    font-size: .42rem;
+    color: #000000;
+    line-height: 1.1;
+    margin-bottom: .5rem;
+}
+
+.act p {
+    text-indent: 2em;
+    font-size: .3rem;
+    color: #000000;
+    line-height: 1.5;
+    margin-bottom: .3rem;
+}
+
+.act img {
+    width: 5.74rem;
+    height: auto;
+    display: block;
+    margin: 0 auto .3rem;
+}
+
+.case_img {
+    padding: .15rem .15rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.case_img>div {
+    margin-bottom: .15rem;
+    width: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.case_img>div:nth-child(n+1) {
+    padding-right: .15rem;
+}
+
+.case_img>div:nth-child(2n+2) {
+    padding-left: .15rem;
+}
+
+.case_img>div>img {
+    width: 100%;
+    height: 2.36rem;
+    display: block;
+}
+
+.case_img>div>p {
+    font-size: .32rem;
+    color: #000000;
+    text-align: center;
+    line-height: 2;
+}
+
+.img_show_logo {
+    width: 4.41rem;
+    height: 2.04rem;
+    display: block;
+    margin: .4rem auto;
+}
+
+.hm_logo {
+    width: 1.79rem;
+    height: .55rem;
+    display: block;
+    position:absolute;
+    right:.2rem;
+    top:.2rem;
+}
+
+.img_show_h1 {
+    font-size: .46rem;
+    text-align: center;
+    margin: .1rem .5rem;
+    color: #fff;
+}
+
+.img_show_btn {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    margin-left: .58rem;
+    margin-right: .58rem;
+}
+
+.img_show_btn img {
+    width: 1.94rem;
+    height: .54rem;
+}
+
+.up_img {
+    margin: .25rem .29rem;
+    overflow: hidden;
+}
+
+.up_img img {
+    width: 100%;
+    height: auto;
+}
+
+.login_wrap {
+    width: 4.73rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.put_wrap {
+    width: 100%;
+    height: .7rem;
+    background: url(../images/tens_33.png);
+    background-size: 100% 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.put_wrap input[type="text"] {
+    height: .7rem;
+    padding-left: .2rem;
+    font-size: .24rem;
+    border: 0;
+    background: none;
+    color:#fff;
+    box-sizing: border-box;
+}
+
+.put_wrap input[type="text"]::placeholder {
+    color: #fff;
+}
+
+.put_wrap span {
+    font-size: .2rem;
+    color: #fff;
+    margin-right: .15rem;
+    display: block;
+    height: .7rem;
+    display: flex;
+    align-items: center;
+    white-space:nowrap;
+}
+
+.login_bz {
+    font-size: .22rem;
+    color: #fff;
+    margin-bottom: .1rem;
+}
+
+.login_p {
+    font-size: .18rem;
+    color: #fff;
+    margin-bottom: .1rem;
+}
+
+.login_btn {
+    display: block;
+    width: 2.01rem;
+    height: 2.07rem;
+    margin: .3rem auto;
+    z-index:140;
+}
+
+.company_title {
+    font-size: .32rem;
+    margin-left: .25rem;
+    color: #171717;
+    padding: .15rem 0;
+}
+
+.company_name {
+    background: url(../image/tens_35.png) left center no-repeat;
+    background-size: .35rem .31rem;
+    padding-left: .45rem;
+}
+
+.company_phone {
+    background: url(../image/tens_36.png) left center no-repeat;
+    background-size: .35rem .31rem;
+    padding-left: .45rem;
+}
+
+.step_title {
+    font-size: .32rem;
+    color: #000000;
+    margin-top: .3rem;
+    text-align: center;
+}
+
+.step_ul {
+    overflow: hidden;
+}
+
+.step_ul li {
+    margin-left: .3rem;
+    margin-right: .3rem;
+    font-size: .3rem;
+    padding: .15rem 0;
+    display: flex;
+}
+
+.step_ul li p {
+    flex: 1;
+    color: #000;
+}
+
+.step_ul li span {
+    width: 1.5rem;
+}
+
+
+/*ty style*/
+
+.f30 {
+    font-size: .3rem;
+}
+
+.l15 {
+    line-height: 1.5;
+}
+
+.ty_head {
+    height: 1rem;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: .36rem;
+    font-family: "微软雅黑";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ty_head>i {
+    display: block;
+    height:.4rem;
+    line-height:.4rem;
+    background: url(../image/tens_25.png) no-repeat;
+    background-size: .21rem .4rem;
+    position: absolute;
+    left: .2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size:.34rem;
+    color:#fff;
+    padding-left:.3rem;
+    font-style:normal;
+}
+
+.ml30 {
+    margin-left: .3rem;
+}
+
+.mr30 {
+    margin-right: .3rem;
+}
+
+.mt30 {
+    margin-top: .3rem;
+}
+
+.mt50 {
+    margin-top: .5rem;
+}
+
+.mt80 {
+    margin-top: .8rem;
+}
+
+.flexp {
+    flex: 1;
+}
+
+.bg_f {
+    background: #fff;
+}
+
+.bg_hui {
+    background: #F4F4F4;
+}
+
+.scroll_view {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 140;
+}
+
+.load {
+    /* color: #A7A7A7;
+    font-size: .26rem;
+    padding: .1rem;
+    text-align: center; */
+    overflow: hidden;
+    text-align: center;
+    padding-top: .15rem;
+    padding-bottom: .15rem;
+}
+.load img {
+    width: 2.32rem;
+    height: .3rem;
+}
+.backhome
+{
+    color:#fff;
+    font-size:.24rem;
+    background:linear-gradient(to bottom,rgba(0,66,72,.5),rgba(0,111,116,.6));
+    border:1px solid #00A2A5;
+    width:1.66rem;
+    padding:.12rem 0;
+    border-radius:.35rem;
+    display:block;
+    margin:.15rem auto;
+    text-align:center;
+    }
+.fc_black {
+    color: #000;
+}
+
+.fc_green {
+    color: #30a028;
+}
+
+.fc_blue {
+    color: #0d74f3;
+}
+
+.fc_refuse {
+    color: #d13030;
+}
+
+.fc_orange {
+    color: #FD742B;
+}

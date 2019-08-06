@@ -1,0 +1,26 @@
+﻿/*================鍩烘湰鏍峰紡閲嶇疆================*/
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,img,span,i,a,em,strong,b,input,textarea,select { margin:0; padding:0; }
+i,em { font-weight:normal; font-style:normal; }
+body { font:12px/1.5 \5b8b\4f53,tahoma,arial,sans-serif; font-family: "Microsoft Yahei";  }
+li { list-style:none; }
+a,img,input { border:0 none; }
+a { text-decoration:none; outline:none; }
+a:hover { text-decoration:none; }
+a:focus,input:focus { outline:0 none;}
+textarea { resize:none; font-size:12px; } /*鍘绘帀鐏嫄鍜岃胺姝屾祻瑙堝櫒鐨凾extarea鏀瑰彉灏哄澶у皬鍔熻兘*/
+
+/*========瀹氫箟鍩虹鏍峰紡========*/
+.hide { display:none;}
+.fl { float:left;}
+.fr { float:right;}
+.clearfix:after { content:" "; display:block; clear:both; height:0; }
+.clearfix { zoom:1; }
+
+/*a鏍囩榧犳爣hover楂樹寒鏄剧ず鐘舵€侊紙鍙€夌敤锛�
+a .opacity { filter:alpha(opacity=100); opacity:1; -moz-opacity:1; } 
+a:hover .opacity { filter:alpha(opacity=80); opacity:0.8; -moz-opacity:0.8; }
+*/
+
+/*涓讳綋瀹藉害鏍峰紡锛堝彲閫夌敤锛夊鏈夋柊瀹藉害锛屽懡鍚嶈鍒欎互灏忓啓w寮€澶达紝鍚庢帴鍏蜂綋瀹藉害鏁版嵁锛屼緥锛�
+.w1200{width: 1200px; margin: 0px auto; }
+*/

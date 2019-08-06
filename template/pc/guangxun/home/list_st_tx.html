@@ -1,0 +1,287 @@
+
+{template "header.html"}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>走进华浦 - 华浦科技</title>
+    <meta name="keywords" content="关键词" />
+    <meta name="description" content="描述" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/public.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/erji.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/iconfont.css" />
+    <!--[if IE 7]>
+    <link type="text/css" rel="stylesheet" href="/statics/default/css/ie7.css" />
+    <![endif]-->
+
+
+<!-- <div class="top">
+    <div class="tmid clearfix">
+        <div class="tmcontent fr clearfix">
+            <form id="form3" action="http://www.accelink.com/index.php?m=Search&a=search" method="get">
+            <input type="hidden" name="m" value="Search">
+            <input type="hidden" name="a" value="search">
+                <img src="/statics/default/images/topimg.jpg"/>
+                <span><a href="http://en.accelink.com/">ENGLISH</a></span>
+                <input class="search" type="text" name="searchs" value="">
+                <input class="dj" type="submit" value="">
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- <div class="banner" style="background: url('template/pc/guangxun/src/images/bg1.png') no-repeat center center;"></div> -->
+
+<!-- <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow" style="margin-top: 0px;">
+            <a href="/" title="网站首页">网站首页</a>
+            {dr_catpos($catid, '', true, '<a href="[url]">[name]</a>')}
+            
+</blockquote> -->
+
+<!-- <div class="content01 clearfix">
+
+    <div class="cleft fl clearfix">
+    <ul>
+        {list action=module catid=$catid order=displayorder,updatetime num=5}
+        <li>
+                <div class="cpimg"><a href="{$t.url}"><img src="{dr_thumb($t.thumb)}" style="height: 100%;width: 100%;"/></a></div>
+                <div class="cpinfo"><p><a href="{$t.url}">{$t.title}</a> </p></div>
+                <div class="cpinfo2"><p><a href="{$t.url}">{$t.title}</a> </p></div>
+            </li>
+        {/list}
+        </ul>
+    </div>
+</div>
+ -->
+<script type="text/javascript" src="template/pc/guangxun/src/js/swiper.min.js"></script>
+
+<section class="nr-banner a-background" style="background-image: url(template/pc/guangxun/src/images/hxjs-banner.jpg);">
+        <div class="width-1220">
+            {list action=category id=$catid num=1 return=c}
+            <h1 class="wow fadeInUpa">{$c.name}</h1>
+            {/list}
+            <p class="wow fadeInUpa" data-wow-delay=".2s">原创技术体系为根基，以深度学习平台为核心“大脑”，快速打通 AI 在各个垂直场景中的应用</p>
+        </div>
+    </section>
+
+<section id="nrnav-box">
+        <div class="hxjs-nav" id="product">
+        <div class="hxjs-nav1" style="position: relative;">
+            {list action=category id=$catid num=1 return=c}
+
+            {list action=category id=$c.pid num=1 return=c1}
+            <div class="hxjs-nav2"><span style="padding-right: .2rem;">{$c1.name}</span>
+                <span class="glyphicon glyphicon-menu-down"></span>
+                <!-- <span class="mui-icon mui-icon-arrowdown"></span> -->
+            </div>
+            {/list}
+            {/list}
+            <div class="hxjs-nav3">
+                <div class="box_Arrow"></div>
+
+                {list action=category id=$catid num=1 return=c}
+
+                {list action=category id=$c.pid num=1 return=c1}
+                
+                {list action=category pid=$c1.id return=c2}
+                {if $key==0}
+                <a href="/Technology/face.html#product" class="hover">{$c1.name}</a>
+                {else}
+                <a href="{$c2.url}">{$c2.name}</a>
+                {/if}
+                {/list}
+                {/list}
+                {/list}
+            </div>
+        </div>
+        <p>{$c.name}</p>
+        </div>
+    </section>
+
+<section class="hxjs-banner m-center">
+        <p class="wow fadeInUpa delay-2 width-1220"><i class="sensetime sensetime-renlianyurentifenxijishu"></i>{$c.name}</p>
+        <div class="width-1220 Technology_banner  a-background" style="background-image: url(template/pc/guangxun/src/images/Technology_photo.jpg);"></div>
+    </section>
+
+    <section>
+        <div class="width-100 hxjs-menu">
+            <h1 class="hxjs-title1">技术能力</h1>
+            <div class="width-1220">
+                <div class="hxjs-menu-box" id="hxjsMenu">
+                    <div class="swiper-wrapper">
+                        {list action=module catid=$catid order=displayorder_desc}
+                        {if $key==0}
+                        <div class="hxjs-menu-item swiper-slide active">{$t.title}</div>
+                        {else}
+                        <div class="hxjs-menu-item swiper-slide">{$t.title}</div>
+                        {/if}
+                        {/list}
+                        <!-- <div class="hxjs-menu-item swiper-slide">人脸关键点定位</div> -->
+                        
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <div class="hxjs-con-box" id="hxjsCon">
+            <div class="swiper-wrapper">
+                {list action=module catid=$catid order=displayorder_desc}
+                <div class="swiper-slide hxjs-con-item">
+                    <div class="hxjs-con-left width-50">
+                        <div>
+                            <h2 class="wo delay-5">{$t.title}</h2>
+                            <p class="wo delay-7">{$t.description}</p>
+                        </div>
+                    </div>
+                    <!-- <?php $img=dr_thumb($t.thumb); ?> -->
+                    <div class="width-50 a-background" style="background-image: url('{dr_thumb($t.thumb)}');"></div>
+                </div>
+                {/list}
+
+            </div>
+
+            <div class="hxjs-btn width-1220">
+                <div class="hxjs-btn1 hxjs-prev mui-icon-extra mui-icon-extra-arrowleftcricle" id="ms-prev"></div>
+                <div class="hxjs-page"></div>
+                <div class="hxjs-btn1 hxjs-next mui-icon-extra mui-icon-extra-arrowrightcricle" id="ms-next"></div>
+            </div>
+
+
+        </div>
+
+<script>
+        $(function(){
+            //二级导航下拉
+                        $('.hxjs-nav1').click(function(){
+                            event.stopPropagation();
+                                if($(this).hasClass('active')){
+                                        $(this).find('.hxjs-nav3').slideUp();
+                                        $(this).removeClass('active')
+                                }else{
+                                        $(this).find('.hxjs-nav3').slideDown()
+                                        $(this).addClass('active')
+                                }
+                        });
+                        $('body').on('click',function(){
+                            $('.hxjs-nav1').removeClass('active');
+                            $('.hxjs-nav1').find('.hxjs-nav3').slideUp();
+                        })
+                        //固定下拉菜单
+                        var headerHeight= $('header').outerHeight();//获得header高度外部高度
+
+            var nrnavHeight = $('#nrnav-box').outerHeight();//获得nrnav-boxr高度外部高度
+            var nrnavTop = $('#nrnav-box').offset().top;//获得nrnav-boxr高度上部高度
+            $(window).scroll(function(){
+                            if($(window).scrollTop()> nrnavTop){
+                                $('header').addClass("headeractive")
+                            } else {
+                                $('header').removeClass('headeractive');
+                            }
+                                if($(window).scrollTop()>nrnavTop){
+                                        $('#nrnav-box').addClass('hxjs-nav_active');
+                                        $('#nrnav-box').css('top',0)
+                }else{
+                    $('#nrnav-box').removeClass('hxjs-nav_active');
+                    $('#nrnav-box').css('top',0)
+                };
+            })
+                        //
+        })
+    </script>
+
+    <script>
+        //二级分类向上滚动
+        var _hash_a = location.hash.substring(1);
+        go_hash(_hash_a);
+
+
+        function go_hash(_hash) {
+            //console.log(_hash);
+            var headerHeight = $('header').outerHeight();
+            var nrnavHeight = $('.nr-banner').outerHeight();
+            if (_hash == "product") {
+                roll = nrnavHeight;
+                $('html , body').animate({
+                    scrollTop: roll
+                }, 0.01);
+            }
+        }
+    </script>
+
+
+
+        <script>
+            var hxjsMenu = new Swiper('#hxjsMenu', {
+                slideToClickedSlide:true,//设置为true则点击slide会过渡到这个slide。
+                                prevButton:'.swiper-button-prev',
+                                nextButton:'.swiper-button-next',
+                                slidesPerView : 6,
+                                slidesPerGroup : 6,
+                                breakpoints: {
+                                    //当宽度小于等于768
+                                    768: {
+                                        slidesPerView: 3,
+                                        slidesPerGroup :3,
+                                        freeMode : true,
+                                    }
+                                },
+            });
+
+            var hxjsCon = new Swiper('#hxjsCon', {
+                pagination : '.hxjs-page',
+                paginationType : 'fraction',
+                prevButton:'.hxjs-prev',
+                nextButton:'.hxjs-next',
+                autoHeight: true, //高度随内容变化
+                onSlideChangeStart: function(swiper){
+                    hxjsMenu.slideTo(swiper.activeIndex, 500, false);
+                    $('#hxjsMenu').find('.swiper-slide').removeClass('active');
+                    $('#hxjsMenu').find('.swiper-slide').eq(swiper.activeIndex).addClass('active');
+
+                },
+                onSlideChangeEnd: function(swiper){
+                    $('#hxjsCon').find('.swiper-slide').find('.wo').removeClass('zhixing');
+                    $('#hxjsCon').find('.swiper-slide').eq(swiper.activeIndex).find('.wo').addClass('zhixing');
+                },
+            });
+            $('#hxjsMenu').find('.swiper-slide').each(function(i){
+                $(this).click(function(){
+                    $('#hxjsMenu').find('.swiper-slide').removeClass('active');
+                    $(this).addClass('active');
+                    hxjsMenu.slideTo(i, 500, true);
+                    hxjsCon.slideTo(i, 500, true);
+                })
+            });
+        </script>
+
+
+    </section>
+    
+
+
+
+<script type="text/javascript" src="/statics/default/js/jquery.js"></script>
+<script type="text/javascript" src="/statics/default/js/jquery.SuperSlide.2.1.2.js"></script>
+<script type="text/javascript" src="template/pc/guangxun/src/js/layout.js"></script>
+
+<script type="text/javascript">
+ //JS代码部分
+ $(function(){
+     $(".content .cleft").find("li").hover(function(){
+        $(this).find("p").css("color","#217ac6");
+     },function(){
+         $(this).find("p").css("color","#333");
+     })
+ })
+</script>
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="/statics/default/js/DD_belatedPNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix(".");
+</script>
+<![Endif]-->
+{template "footer.html"}

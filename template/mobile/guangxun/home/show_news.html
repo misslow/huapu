@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en" class="home">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新闻中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" />
+    <script type="text/javascript" src="{ROOT_THEME_PATH}mobile/src/js/default.js"></script>
+    <script type="text/javascript" src="{ROOT_THEME_PATH}mobile/src/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="{ROOT_THEME_PATH}mobile/src/js/fastclick.js"></script>
+    <link rel="stylesheet" href="{ROOT_THEME_PATH}mobile/src/css/phone_base.css" type="text/css">
+    <link rel="stylesheet" href="{ROOT_THEME_PATH}mobile/src/css/phone_home.css" type="text/css">
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+
+        })
+    </script>
+</head>
+
+<body class="body_flex">
+    <div class="ty_head">新闻中心<i class="back" onclick="javascript:history.go(-1)"></i></div>
+    <div class="flexp pr bg_hui">
+        <div class="scroll_view">
+            <div class="act">
+                <h1 class="act_title">{$title}</h1>
+                {$inputtime}
+                {$content}
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+        function deleteStyle() {
+            var s = document.getElementsByTagName('*');
+            for (var i = 1; i < s.length; i++) {
+                s[i].style = null;
+            }
+        }
+
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        function unescapeHTML(a) {
+            a = "" + a;
+            return a.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&#59;/g, ";").replace(/&nbsp;/g, " ").replace(/&#39;/g, "\'").replace(/\/kindeditor\/attached\/image/g, "http://temp.goldweb.cn/kindeditor/attached/image");
+            return s;
+        }
+        $.ajax({
+            type: "post",
+            dataType: 'text',
+            url: '../Data/Handler.ashx/getActData?t=' + getQueryString("t") + '&ts=' + getQueryString("ts") + '&tf=' + getQueryString("tf") + '&id=' + getQueryString("n_id"),
+            async: false,
+            success: function (data, textStatus) {
+                var obj = $.parseJSON(data);
+                $('.act').append(unescapeHTML(obj.content));
+                $(".act_title").html(obj.title);
+                deleteStyle();
+            }
+        });
+    })
+</script>
+
+</html>

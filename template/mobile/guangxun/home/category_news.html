@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en" class="home">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新闻中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" />
+    <script type="text/javascript" src="{ROOT_THEME_PATH}mobile/src/js/default.js"></script>
+    <script type="text/javascript" src="{ROOT_THEME_PATH}mobile/src/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="{ROOT_THEME_PATH}mobile/src/js/fastclick.js"></script>
+    <link rel="stylesheet" href="{ROOT_THEME_PATH}mobile/src/css/phone_base.css" type="text/css">
+    <link rel="stylesheet" href="{ROOT_THEME_PATH}mobile/src/css/phone_home.css" type="text/css">
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+            $.ajax({
+                type: "post",
+                dataType: 'text',
+                url: '../Data/Handler.ashx/getActList',
+                async: false,
+                success: function (data, textStatus) {
+                    var obj = $.parseJSON(data).data;
+                    var strhtml = "";
+                    for (var i = 0; i < obj.length; i++) {
+                        strhtml += '<li><a href="case.html?n_id=' + obj[i].n_id + '">' + obj[i].n_title + '</a></li>'
+                    }
+                    $(".info_list").html(strhtml);
+                }
+            });
+
+        })
+    </script>
+</head>
+
+<body class="body_flex">
+    <div class="ty_head">新闻中心<i class="back" onclick="javascript:history.go(-1)"></i></div>
+    <div class="flexp pr bg_f">
+        <div class="scroll_view">
+            <ul class="info_list">
+                {list action=module catid=$catid order=id_desc}
+                <li>
+                    <a href="{$t.url}">{$t.title}</a>
+                </li>
+                {/list}
+            </ul>
+            <div class="load"><img src="images/tens_27.png" alt=""></div>
+        </div>
+    </div>
+</body>
+
+</html>

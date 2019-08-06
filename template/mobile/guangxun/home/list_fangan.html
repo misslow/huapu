@@ -1,0 +1,230 @@
+
+{template "header.html"}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>走进华浦 - 华浦科技</title>
+    <meta name="keywords" content="关键词" />
+    <meta name="description" content="描述" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/public.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/erji.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/iconfont.css" />
+    <!--[if IE 7]>
+    <link type="text/css" rel="stylesheet" href="/statics/default/css/ie7.css" />
+    <![endif]-->
+
+
+<!-- <div class="top">
+    <div class="tmid clearfix">
+        <div class="tmcontent fr clearfix">
+            <form id="form3" action="http://www.accelink.com/index.php?m=Search&a=search" method="get">
+            <input type="hidden" name="m" value="Search">
+            <input type="hidden" name="a" value="search">
+                <img src="/statics/default/images/topimg.jpg"/>
+                <span><a href="http://en.accelink.com/">ENGLISH</a></span>
+                <input class="search" type="text" name="searchs" value="">
+                <input class="dj" type="submit" value="">
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- <div class="banner" style="background: url('templates/pc/guangxun/src/images/bg1.png') no-repeat center center;"></div> -->
+
+<!-- <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow" style="margin-top: 0px;">
+            <a href="/" title="网站首页">网站首页</a>
+            {dr_catpos($catid, '', true, '<a href="[url]">[name]</a>')}
+            
+</blockquote> -->
+
+<!-- <div class="content01 clearfix">
+
+    <div class="cleft fl clearfix">
+    <ul>
+        {list action=module catid=$catid order=displayorder,updatetime num=5}
+        <li>
+                <div class="cpimg"><a href="{$t.url}"><img src="{dr_thumb($t.thumb)}" style="height: 100%;width: 100%;"/></a></div>
+                <div class="cpinfo"><p><a href="{$t.url}">{$t.title}</a> </p></div>
+                <div class="cpinfo2"><p><a href="{$t.url}">{$t.title}</a> </p></div>
+            </li>
+        {/list}
+        </ul>
+    </div>
+</div>
+ -->
+<script type="text/javascript" src="templates/pc/guangxun/src/js/swiper.min.js"></script>
+
+{list action=category id=$catid num=1 return=b}
+
+<section class="nr-banner a-background" style="background-image: url('http://{SITE_DOMAIN}/templates/pc/guangxun/src/images/khal-banner.jpg');">
+
+{/list}
+        <div class="width-1220">
+            {list action=category id=$catid num=1 return=c}
+            <h1 class="wow fadeInUpa">解决方案</h1>
+            {/list}
+            <!-- <p class="wow fadeInUpa" data-wow-delay=".2s">{$c.content}</p> -->
+        </div>
+    </section>
+
+
+    <section>
+        <div class="width-1220 cp-4">
+            
+            
+            <div class="cp-6 khal-1" id="khal-menubox">
+
+                <div class="swiper-wrapper">
+                {list action=module catid=$catid return=c1}
+                
+                {if $k==0}
+                <div class="cp-addname hover swiper-slide active">
+                {else}
+                <div class="cp-addname swiper-slide">
+                {/if}
+                            <a class="cp-5 m-center khal-menu ">
+                                <div><img src="{dr_thumb($c1.thumb)}"></div>
+                            </a>
+                            <p>{$c1.title}</p>
+                        </div>
+                {/list}   
+                 </div>
+                                      
+            </div>
+            
+            
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        <div class="width-100 khal-2" id="khal">
+            <div class="swiper-wrapper">
+                <!--1-->
+                {list action=module catid=$catid return=c2}
+                <div class="swiper-slide">
+                    
+
+                    <div class="khal-3 a-background"  style="background-image: url('{dr_thumb($c2.thumb)}');">
+                        <div class="width-1220 khal-8">
+                            <div class="khal-4">
+                                <!--notempty name="xo.pic2"><img src="/国内某头部券商" class="khal-img" /></notempty-->
+                                <p class="delay-2">{$c2.title}</p>
+                                <p class="delay-2 case_info">{$c2.description}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="width-1220 khal-7">
+                        <div class="khal-5">
+                            <div class="text">
+                                <h2 class="wow fadeInUpa"></h2>
+                                <p class="wow fadeInUpa delay-2">商汤科技为客户提供一系列的模型及工具，为客户的业务系统提供了智能的引擎，实现精准的个性化运营，提高了营销收益及服务效率。</p>
+                            </div>
+                            <div class="img"><img src="/upfile/201904/5cb7295d10994.jpg" /></div>
+                        </div>
+                    </div> -->
+                
+                </div>
+                {/list}
+            </div>
+        </div>
+
+        <script>
+            var hxjsMenu = new Swiper('#khal-menubox', {
+                slideToClickedSlide:true,//设置为true则点击slide会过渡到这个slide。
+                                prevButton:'.swiper-button-prev',
+                                nextButton:'.swiper-button-next',
+                                slidesPerView : 5,
+                                slidesPerGroup :5,
+                                //slidesPerView : 1,
+                                //slidesPerGroup : 1,
+                                breakpoints: {
+                                    //当宽度小于等于768
+                                    768: {
+                                        slidesPerView: 4,
+                                        slidesPerGroup :4,
+                                        freeMode : true,
+                                    }
+                                },
+            });
+            var hxjsCon = new Swiper('#khal', {
+                pagination : '.hxjs-page',
+                paginationType : 'fraction',
+                prevButton:'.hxjs-prev',
+                nextButton:'.hxjs-next',
+                autoHeight: true, //高度随内容变化
+                onSlideChangeStart: function(swiper){
+                    hxjsMenu.slideTo(swiper.activeIndex, 500, false);
+                    $('#khal-menubox').find('.swiper-slide').removeClass('hover');
+                    $('#khal-menubox').find('.swiper-slide').eq(swiper.activeIndex).addClass('hover');
+
+                },
+                onSlideChangeEnd: function(swiper){
+                    $('#khal').find('.swiper-slide').find('.wo').removeClass('zhixing');
+                    $('#khal').find('.swiper-slide').eq(swiper.activeIndex).find('.wo').addClass('zhixing');
+                },
+            });
+            $('#khal-menubox').find('.swiper-slide').each(function(i){
+                $(this).click(function(){
+                    $('#khal-menubox').find('.swiper-slide').removeClass('hover');
+                    $(this).addClass('hover');
+                    hxjsMenu.slideTo(i, 500, true);
+                    hxjsCon.slideTo(i, 500, true);
+                })
+            });
+        </script>
+    </section>
+
+ 
+
+
+
+<!-- <script type="text/javascript" src="/statics/default/js/jquery.js"></script> -->
+<script type="text/javascript" src="/statics/default/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/statics/default/js/jquery.SuperSlide.2.1.2.js"></script> -->
+<script type="text/javascript" src="templates/pc/guangxun/src/js/layout.js"></script>
+<script type="text/javascript" src="templates/pc/guangxun/src/js/wow.js"></script>
+
+<script type="text/javascript">
+ //JS代码部分
+ $(function(){
+     $(".content .cleft").find("li").hover(function(){
+        $(this).find("p").css("color","#217ac6");
+     },function(){
+         $(this).find("p").css("color","#333");
+     })
+ })
+</script>
+
+
+<script>
+    $(function(){
+        var headerHeight= $('header').outerHeight();
+            var nrnavHeight = $('#nrnav-box').outerHeight();
+            var nrnavTop = $('#nrnav-box').offset().top;
+
+
+             $(window).scroll(function(){
+            if($(window).scrollTop()>nrnavTop-headerHeight){
+                    $('header').addClass("headeractive")
+                    $('#nrnav-box').addClass('active');
+                    $('#nrnav-box').css('top',0)
+                    $('#nrnav-box-height').height(nrnavHeight);
+                }else{
+                    $('header').removeClass('headeractive');
+                    $('#nrnav-box').removeClass('active');
+                    $('#nrnav-box').css('top',0)
+                    $('#nrnav-box-height').height(0);
+                };
+              })
+
+    })
+</script>
+
+<!--[if IE 6]>
+<script type="text/javascript" src="/statics/default/js/DD_belatedPNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix(".");
+</script>
+<![Endif]-->
+{template "footer.html"}

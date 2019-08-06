@@ -1,0 +1,174 @@
+
+{template "header.html"}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>华浦科技</title>
+    <meta name="keywords" content="华浦科技" />
+    <meta name="description" content="华浦科技" />
+    
+
+    <!--[if IE 7]>
+    <link type="text/css" rel="stylesheet" href="/statics/default/css/ie7.css" />
+    <![endif]-->
+</head>
+
+<!-- <script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script> -->
+<script type="text/javascript">uaredirect("http://m.tpcmf.com","http://www.tpcmf.com");</script>
+
+
+<!-- // 下面调用标题
+{dr_block('huandengpian', 1)}
+// 下面调用内容
+{php $block=dr_block('huandengpian');}
+{loop $block.file $i $file}
+文件地址: {dr_get_file($file)}
+文件标题: {$block['title'][$i]}
+{/loop}
+ -->
+<div class="banner0">
+    <div class="bimg">
+	<ul>
+        {php $block=dr_block('lunbo');}
+        {loop $block.file $i $file}
+		<li style="background: url('{dr_get_file($file)}') center center;"> </li>   
+        {/loop}
+        </ul>
+    </div>
+    <div class="hd clearfix">
+        <ul>
+		<li></li><li></li><li></li>           
+        </ul>
+    </div>
+    <!-- <div class="tmarea">
+        <div class="tmcategory">            
+			<ul >
+               {category module=share pid=4 return=c} 
+			<li><a href="{$c.url}">{$c.name}</a><div class="tmico"></div></li>
+                {/category}
+            </ul>
+        </div>
+        <div class="ss">
+            
+
+            <form id="form2" method="get" module="/index.php" >
+							<input type="hidden" name="c" value="search">
+							
+								<input type="hidden" name="mid" value="news">
+								<input class="ip" name="keyword" type="text" placeholder="产品搜索" onfocus="this.value=''" onblur="if(this.value==''){this.value='产品搜索'}" >
+								<input class="btn" type="submit" value="">
+							
+			</form>
+
+        </div>
+    </div> -->
+</div>
+
+<div class="content">
+
+    
+{category module=share pid=0 tid=1 num=1 return=c}
+				<div class="blog-module ">
+					<div class="fgx">
+        			<div class="info">{$c.name}</div>
+   				 	</div>
+					<!-- <div class="blog-module-title"><a href="{$c.url}">{$c.name}</a></div> -->
+					<div class="index-div-ul">
+						<div class="company">
+        <div class="category clearfix">
+						<ul class="fa-ul blog-module-ul index-ul">
+                            
+							{category module=share pid=$c.id order=displayorder,updatetime num=3 return=c1}
+							
+
+							
+
+        <li style="margin-right: 180px;">
+        	<a href="{$c1.url}" >
+                    
+<!-- <span class="glyphicon glyphicon-send" aria-hidden="true"></span> -->
+                    <div class="limg"><img src="template/pc/guangxun/src/images/lmbg1.png"/> </div>
+                    <!-- <div class="limg"><img src="{dr_thumb($c1.thumb)}" width="80px" height="80px" /> </div> -->
+
+                    <p class="p1">{$c1.name}</p>
+                    
+                </li>
+							{/category}
+						</ul>
+<div class="arrArea">
+            <a  href="javascript:void(0)" class="prev fl"></a>
+            <a  href="javascript:void(0)" class="next fr"></a>
+        </div>
+					</div></div>
+					</div>
+				</div>
+				{/category}
+
+  
+    
+
+{category module=share pid=0 tid=1 id=2 return=c}
+				<div class="blog-module ">
+					<div class="fgx">
+        <div class="info">{$c.name} </div>
+    </div>
+					<!-- <div class="blog-module-title"><a href="{$c.url}">{$c.name}</a></div> -->
+					<div class="news">
+
+						<ul class=>
+							
+							{category module=share pid=$c.id order=displayorder,updatetime num=3}
+
+							<li>
+					            <P class="p4"><a href="{$t.url}">{dr_strcut($t.name, 35)}</a> </P>
+					            <p class="p5">{$t.inputtime}</p>
+					            <a href="{$t.url}"><img src="{dr_thumb($t.thumb)}"> </a>
+					            <p class="p6"> {$t.name}</p>
+					            <div class="newico"></div>
+					        </li>
+
+							{/category}
+
+							
+						</ul>
+
+					</div>
+				</div>
+				{/category}
+
+   
+</div>
+
+
+
+
+<!-- <script type="text/javascript" src="templates/pc/guangxun/src/js/NSW_Details.js"></script> -->
+<!-- <script type="text/javascript" src="templates/pc/guangxun/src/js/MobileRewrite.js"></script> -->
+
+<script type="text/javascript">
+ //JS代码部分
+ jQuery(".banner0").slide({titCell:".hd ul",mainCell:".bimg ul",autoPage:true,effect:"leftLoop",autoPlay:true,interTime:6000});
+ jQuery(".company").slide({titCell:".hd ul",mainCell:".category ul",autoPage:true,effect:"left",vis:4});
+    //产品中心content01
+ $(function(){
+     $(".content01 .cleft").find("li").hover(function(){
+         $(this).find(".cpinfo2").slideDown();
+     },function(){
+         $(this).find(".cpinfo2").hide();
+     })
+     $(".footer .footbt .fbright").find("li").hover(function(){
+         $(this).find(".wxtc").show();
+     },function(){
+         $(this).find(".wxtc").hide();
+     })
+ })
+</script>
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="/statics/default/js/DD_belatedPNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix(".");
+</script>
+<![Endif]-->
+
+{template "footer.html"}

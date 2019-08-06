@@ -1,0 +1,318 @@
+
+{template "header.html"}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>走进华浦 - 华浦科技</title>
+    <meta name="keywords" content="关键词" />
+    <meta name="description" content="描述" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/public.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/erji.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/iconfont.css" />
+    <!--[if IE 7]>
+    <link type="text/css" rel="stylesheet" href="/statics/default/css/ie7.css" />
+    <![endif]-->
+
+
+<!-- <div class="top">
+    <div class="tmid clearfix">
+        <div class="tmcontent fr clearfix">
+            <form id="form3" action="http://www.accelink.com/index.php?m=Search&a=search" method="get">
+            <input type="hidden" name="m" value="Search">
+            <input type="hidden" name="a" value="search">
+                <img src="/statics/default/images/topimg.jpg"/>
+                <span><a href="http://en.accelink.com/">ENGLISH</a></span>
+                <input class="search" type="text" name="searchs" value="">
+                <input class="dj" type="submit" value="">
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- <div class="banner" style="background: url('template/pc/guangxun/src/images/bg1.png') no-repeat center center;"></div> -->
+
+<!-- <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow" style="margin-top: 0px;">
+            <a href="/" title="网站首页">网站首页</a>
+            {dr_catpos($catid, '', true, '<a href="[url]">[name]</a>')}
+            
+</blockquote> -->
+
+<!-- <div class="content01 clearfix">
+
+    <div class="cleft fl clearfix">
+    <ul>
+        {list action=module catid=$catid order=displayorder,updatetime num=5}
+        <li>
+                <div class="cpimg"><a href="{$t.url}"><img src="{dr_thumb($t.thumb)}" style="height: 100%;width: 100%;"/></a></div>
+                <div class="cpinfo"><p><a href="{$t.url}">{$t.title}</a> </p></div>
+                <div class="cpinfo2"><p><a href="{$t.url}">{$t.title}</a> </p></div>
+            </li>
+        {/list}
+        </ul>
+    </div>
+</div>
+ -->
+<script type="text/javascript" src="template/pc/guangxun/src/js/swiper.min.js"></script>
+
+{list action=category id=$catid num=1 return=b}
+
+<section class="nr-banner a-background" style="background-image: url({dr_thumb($b.thumb)});">
+
+{/list}
+        <div class="width-1220">
+            {list action=category id=$catid num=1 return=c}
+            <h1 class="wow fadeInUpa">{$c.name}</h1>
+            {/list}
+            <p class="wow fadeInUpa" data-wow-delay=".2s">{$c.content}</p>
+        </div>
+    </section>
+
+    <!--产品列表-->
+    <!-- <section class="border-bottom" id="product">
+        <div class="width-1220">
+            <p class="cplb"><span id="cplb">收起产品列表</span></p>
+            <ul class="cplb-1" id="cplb-con">
+                {list action=module catid=$catid return=c}
+                <li class="hover">
+                    <span>
+                        <img src="{dr_thumb($c.thumb)}" class="img" />
+                        <img src="/images/cp-nav7-h.png" class="img-hover" />
+                    </span>
+                    <a href="{$c.url}">
+                        {$c.title}
+                    </a>
+                </li>
+                {/list}
+                
+                
+            </ul>
+        </div>
+    </section> -->
+
+<!-- <section id="nrnav-box">
+        <div class="hxjs-nav" id="product">
+        <div class="hxjs-nav1" style="position: relative;">
+            {list action=category id=$catid num=1 return=c}
+
+            {list action=category id=$c.pid num=1 return=c1}
+            <div class="hxjs-nav2"><span style="padding-right: .2rem;">{$c1.name}</span>
+                <span class="glyphicon glyphicon-menu-down"></span>
+                <span class="mui-icon mui-icon-arrowdown"></span>
+            </div>
+            {/list}
+            {/list}
+            <div class="hxjs-nav3">
+                <div class="box_Arrow"></div>
+
+                {list action=category id=$catid num=1 return=c}
+
+                {list action=category id=$c.pid num=1 return=c1}
+                
+                {list action=category pid=$c1.id return=c2}
+                
+                {if $key==0}
+                <a href="{$c2.url}" class="hover">{$c2.name}</a>
+                {else}
+                <a href="{$c2.url}">{$c2.name}</a>
+                {/if}
+                {/list}
+                {/list}
+                {/list}
+            </div>
+        </div>
+        <p>{$c.name}</p>
+        </div>
+    </section>
+ -->
+   <section class="border-bottom nrnav-box" style="overflow: visible;" id="nrnav-box">
+        <div class="width-1220 nr-nav">
+            <div class="nr-nav-left">SenseFoundry {$c.name}</div>
+            <ul class="nr-nav-right1" id="nr-nav">
+                <li><a class="hover">产品介绍</a></li>
+                <li><a>产品优势</a></li>
+                <li><a>助力场景</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <div id="nrnav-box-height"></div>
+
+    <section id="nr-nav-con">
+        <!--产品介绍-->
+        <div class="cp-title">产品介绍</div>
+        {list action=module catid=$catid num=1 return=c}
+        <div class="cp-1 cp-text-bg1">
+            <div class="cp-text width-1220">
+                <div class="cp-text1">
+                    <h2 class="cp-text-h2 wow fadeInUpa" data-wow-delay=".2s" style="max-width: 520px;">{$c.description}</h2>
+                    <div class="cp-text-a wow fadeInUpa" data-wow-delay=".4s">
+                        <!--<span class="hover" data-toggle="modal" data-target="#vodeo">观看视频</span>
+                        <span class="cp-text-a-1" data-toggle="modal" onclick="sqsy('../../form.html')">申请试用</span>-->
+                    </div>
+                </div>
+            </div>
+            <div class="cp-bg a-background cp-bg1" style="background-image: url('{dr_thumb($c.thumb)}');"></div>
+        </div>
+        {/list}
+        <!--产品优势-->
+        <div class="cp-title cp-title2">产品优势</div>
+        <div class="cp-xg width-1220">
+            <div class="cp-xg1">
+                <div class="cp-xg2 wow fadeInUpa">
+                    <div class="img"><img src="template/pc/guangxun/src/images/zhaf-ys1.png"/></div>
+                    <p>微服务架构，容器化部署，应用快速上线</p>
+                </div>
+                <div class="cp-xg2 wow fadeInUpa delay-1">
+                    <div class="img"><img src="template/pc/guangxun/src/images/zhaf-ys2.png"/></div>
+                    <p>支持单机版和分布式版本，可平滑扩展</p>
+                </div>
+                <div class="cp-xg2 wow fadeInUpa delay-2">
+                    <div class="img"><img src="template/pc/guangxun/src/images/zhaf-ys3.png"/></div>
+                    <p>支持关键数据 3 副本保护，避免单点失效</p>
+                </div>
+                <div class="cp-xg2 wow fadeInUpa">
+                    <div class="img"><img src="template/pc/guangxun/src/images/zhaf-ys4.png"/></div>
+                    <p>基于 GPU 的亿级静态大库高并发秒级检索</p>
+                </div>
+                <div class="cp-xg2 wow fadeInUpa delay-1">
+                    <div class="img"><img src="template/pc/guangxun/src/images/zhaf-ys5.png"/></div>
+                    <p>基于 GPU 的千亿级路人库高并发秒级检索</p>
+                </div>
+                <div class="cp-xg2 wow fadeInUpa delay-2">
+                    <div class="img"><img src="template/pc/guangxun/src/images/zhaf-ys6.png"/></div>
+                    <p>具备大容量、高性能、高可用性、高开放度等特点</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--助力场景-->
+        <div class="cp-title" style="background: #281ba2;">助力场景</div>
+        <div class="cp-1">
+            <div class="cp-bg a-background" style="background-image: url(template/pc/guangxun/src/images/Security_SenseFoundry2.jpg);"></div>
+            <div class="cp-text width-1220 cp-text2 cp-text4">
+                <div class="cp-text1">
+                    <h2 class="cp-text-h2 wow fadeInUpa">重点人员黑名单布控</h2>
+                </div>
+            </div>
+        </div>
+        <div class="cp-1">
+            <div class="cp-bg a-background" style="background-image: url(template/pc/guangxun/src/images/Security_SenseFoundry3.jpg);"></div>
+            <div class="cp-text width-1220 cp-text2 cp-text4">
+                <div class="cp-text1">
+                    <h2 class="cp-text-h2 wow fadeInUpa">城市活动人员轨迹还原</h2>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+
+
+
+<!-- <script type="text/javascript" src="/statics/default/js/jquery.js"></script> -->
+<script type="text/javascript" src="/statics/default/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/statics/default/js/jquery.SuperSlide.2.1.2.js"></script> -->
+<script type="text/javascript" src="template/pc/guangxun/src/js/layout.js"></script>
+
+<script type="text/javascript">
+ //JS代码部分
+ $(function(){
+     $(".content .cleft").find("li").hover(function(){
+        $(this).find("p").css("color","#217ac6");
+     },function(){
+         $(this).find("p").css("color","#333");
+     })
+ })
+</script>
+
+
+<script>
+
+
+        $(function(){
+            //产品服务-展开产品列表
+            $('#cplb').click(function(){
+                if($(this).hasClass('hover')){
+                    $(this).html('收起产品列表')
+                    $(this).removeClass('hover');
+                    $('#cplb-con').slideDown();
+                }else{
+                    $(this).html('展开产品列表')
+                    $(this).addClass('hover');
+                    $('#cplb-con').slideUp();
+                }
+            })
+//二级导航
+            var headerHeight= $('header').outerHeight();
+            var nrnavHeight = $('#nrnav-box').outerHeight();
+            var nrnavTop = $('#nrnav-box').offset().top;
+            var nav1;
+            var nav2;
+            var nav3;
+
+            $(window).scroll(function(){
+                nav1 = Math.floor($('#nr-nav-con').find('.cp-title').eq(0).offset().top - headerHeight-nrnavHeight);
+                nav2 = Math.floor($('#nr-nav-con').find('.cp-title').eq(1).offset().top - headerHeight-nrnavHeight);
+                nav3 = Math.floor($('#nr-nav-con').find('.cp-title').eq(2).offset().top - headerHeight-nrnavHeight);
+                if($(window).scrollTop()<nav2){
+                    $('#nr-nav>li>a').removeClass('hover');
+                    $('#nr-nav>li>a').eq(0).addClass('hover');
+                }else if($(window).scrollTop()>=nav2&&$(window).scrollTop()<nav3){
+                    $('#nr-nav>li>a').removeClass('hover');
+                    $('#nr-nav>li>a').eq(1).addClass('hover');
+                }else if($(window).scrollTop()>=nav3){
+                    $('#nr-nav>li>a').removeClass('hover');
+                    $('#nr-nav>li>a').eq(2).addClass('hover');
+                }
+                if($(window).scrollTop()>nrnavTop-$('header').outerHeight()){
+                    $('header').addClass("headeractive")
+                    $('#nrnav-box').addClass('active');
+                    $('#nrnav-box').css('top',0)
+                    $('#nrnav-box-height').height(nrnavHeight);
+                    headerHeight= 0;
+                }else{
+                    $('header').removeClass('headeractive');
+                    $('#nrnav-box').removeClass('active');
+                    $('#nrnav-box').css('top',0)
+                    $('#nrnav-box-height').height(0);
+                    headerHeight= $('header').outerHeight();
+                };
+            })
+            var roll;
+            $('#nr-nav>li').each(function(i){
+                $(this).click(function(){
+                    roll = Math.floor($('#nr-nav-con').find('.cp-title').eq(i).offset().top -nrnavHeight);
+                    $('html , body').animate({scrollTop: roll});
+                    return false;
+                })
+            })
+
+                        //二级分类向上滚动
+                        var _hash_a=location.hash.substring(1);
+                        go_hash(_hash_a);
+                })
+                function go_hash(_hash){
+                        //console.log(_hash);
+                        var headerHeight= $('header').outerHeight();
+                        var nrnavHeight = $('.nr-banner').outerHeight();
+                        var  zhceHeight = $('.nr-nav-jia').outerHeight();
+                        if(_hash=="zhce"){
+                            roll = nrnavHeight;
+                            $('html , body').animate({scrollTop: roll},0.01);
+                        }else if(_hash=="product"){
+                            roll = nrnavHeight+zhceHeight;
+                            $('html , body').animate({scrollTop: roll},0.01);
+                        }
+                }
+    </script>
+
+<!--[if IE 6]>
+<script type="text/javascript" src="/statics/default/js/DD_belatedPNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix(".");
+</script>
+<![Endif]-->
+{template "footer.html"}

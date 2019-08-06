@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en" class="home">
+
+<head>
+    <meta charset="UTF-8">
+    <title>客户案例</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" />
+    <script type="text/javascript" src="templates/mobile/guangxun/src/js/default.js"></script>
+    <script type="text/javascript" src="templates/mobile/guangxun/src/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="templates/mobile/guangxun/src/js/fastclick.js"></script>
+    <link rel="stylesheet" href="templates/mobile/guangxun/src/css/phone_base.css" type="text/css">
+    <link rel="stylesheet" href="templates/mobile/guangxun/src/css/phone_home.css" type="text/css">
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+            $.ajax({
+                type: "post",
+                dataType: 'text',
+                url: '../Data/Handler.ashx/getActList',
+                async: false,
+                success: function (data, textStatus) {
+                    var obj = $.parseJSON(data).data;
+                    var strhtml = "";
+                    for (var i = 0; i < obj.length; i++) {
+                        strhtml += '<li><a href="case.html?n_id=' + obj[i].n_id + '">' + obj[i].n_title + '</a></li>'
+                    }
+                    $(".info_list").html(strhtml);
+                }
+            });
+
+        })
+    </script>
+</head>
+
+<body class="body_flex">
+    <div class="ty_head">客户典例<i class="back" onclick="javascript:history.go(-1)"></i></div>
+    <div class="flexp pr bg_f">
+        <div class="scroll_view">
+            <ul class="info_list">
+
+
+                <li>
+                    <a href="">国家公安部（中央维稳办）—社会风险评估统国家公安部国家公安部</a>
+                </li>
+                
+            </ul>
+            <div class="load"><img src="images/tens_27.png" alt=""></div>
+        </div>
+    </div>
+</body>
+
+</html>

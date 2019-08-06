@@ -1,0 +1,103 @@
+<?php $indexc=1;?>{template "header.html"}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>产品列表</title>
+    <meta name="keywords" content="关键词" />
+    <meta name="description" content="描述" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/base.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/index.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/global.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/layout.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/resetcommon.css" />
+    <link type="text/css" rel="stylesheet" href="templates/pc/guangxun/src/css/style1.css" />
+
+<!-- <div class="top">
+    <div class="tmid clearfix">
+        <div class="tmcontent fr clearfix">
+            <form id="form3" action="http://www.accelink.com/index.php?m=Search&a=search" method="get">
+            <input type="hidden" name="m" value="Search">
+            <input type="hidden" name="a" value="search">
+                <img src="/statics/default/images/topimg.jpg"/>
+                <span><a href="http://en.accelink.com/">ENGLISH</a></span>
+                <input class="search" type="text" name="searchs" value="">
+                <input class="dj" type="submit" value="">
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="banner" style="background: url('templates/pc/guangxun/src/images/bg1.png') no-repeat center center;"></div>
+
+<div class="content8 clearfix">
+    <div class="cleft fl clearfix">
+
+
+        <h2>搜索</h2>    
+        <hr width="100%"> 
+        <ul>
+{list action=sql module=$mid sql='$search_sql' page=1 pagesize=10 urlrule=$urlrule}
+            <li class="clearfix">
+                <a href="{$t.url}">
+                <div class="limg fl"><img src="{dr_thumb($t.thumb)}"> </div>
+                <div class="pright fl">
+                    <p class="p1">{$t.title}</p>
+                    <p class="p2">{$t.description}</p>
+                 </a>   
+                </div>
+            </li>
+{/list}
+        </ul>       
+        
+            
+ <div class="search-pagination">
+                            <ul class="pagination">
+                                {$pages}
+                            </ul>
+                        </div>                               
+                            
+        
+    </div>
+
+    <!-- <div class="cright fr">
+        <div class="cr1">产品中心</div>
+        <ul>
+            <li ><a href="/index.php?a=lists&catid=27">传输类产品</a><div class="tmico"></div></li><li ><a href="/index.php?a=lists&catid=28">数据通信类产品</a><div class="tmico"></div></li><li ><a href="/index.php?a=lists&catid=29">接入类产品</a><div class="tmico"></div></li><li ><a href="/index.php?a=lists&catid=30">无线宽带类产品</a><div class="tmico"></div></li><li ><a href="/index.php?a=lists&catid=31">子系统类产品</a><div class="tmico"></div></li>             
+            </ul>
+         <div class="cr2">
+            <form id="form2" action="/index.php" method="get">
+            <input type="hidden" name="m" value="Search">           
+                <input class="ips" id="ips" type="text" placeholder="产品搜索" name="search" onfocus="this.value=''" onblur="if(this.value==''){this.value='产品搜索'}" >
+                
+                <input class="ipb" id="ipb" type="submit" value="">
+            </form>
+        </div>
+    </div> -->
+</div>
+
+<script type="text/javascript" src="/statics/default/js/jquery.js"></script>
+<script type="text/javascript" src="/statics/default/js/jquery.SuperSlide.2.1.2.js"></script>
+<script type="text/javascript" src="templates/pc/guangxun/src/js/layout.js"></script>
+<!-- <script type="text/javascript" src="templates/pc/guangxun/src/js/NSW_Details.js"></script> -->
+<!-- <script type="text/javascript" src="templates/pc/guangxun/src/js/MobileRewrite.js"></script> -->
+<script type="text/javascript">
+ //JS代码部分
+ jQuery(".banner").slide({titCell:".hd ul",mainCell:".bimg ul",autoPage:true,effect:"leftLoop",autoPlay:true});
+ jQuery(".company").slide({titCell:".hd ul",mainCell:".list ul",autoPage:true,effect:"left",vis:4});
+    $(function(){
+        $(".content .cleft").find("li").hover(function(){
+            $(this).find(".cpinfo2").slideDown();
+        },function(){
+            $(this).find(".cpinfo2").hide();
+        })
+    })
+</script>
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="/statics/default/js/DD_belatedPNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix(".");
+</script>
+<![Endif]-->
+{template "footer.html"}

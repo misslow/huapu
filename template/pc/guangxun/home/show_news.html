@@ -1,0 +1,222 @@
+
+{template "header.html"}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>走进华浦 - 华浦科技</title>
+    <meta name="keywords" content="关键词" />
+    <meta name="description" content="描述" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/public.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/erji.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/iconfont.css" />
+    <!--[if IE 7]>
+    <link type="text/css" rel="stylesheet" href="/statics/default/css/ie7.css" />
+    <![endif]-->
+
+
+<!-- <div class="top">
+    <div class="tmid clearfix">
+        <div class="tmcontent fr clearfix">
+            <form id="form3" action="http://www.accelink.com/index.php?m=Search&a=search" method="get">
+            <input type="hidden" name="m" value="Search">
+            <input type="hidden" name="a" value="search">
+                <img src="/statics/default/images/topimg.jpg"/>
+                <span><a href="http://en.accelink.com/">ENGLISH</a></span>
+                <input class="search" type="text" name="searchs" value="">
+                <input class="dj" type="submit" value="">
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- <div class="banner" style="background: url('template/pc/guangxun/src/images/bg1.png') no-repeat center center;"></div> -->
+
+<!-- <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow" style="margin-top: 0px;">
+            <a href="/" title="网站首页">网站首页</a>
+            {dr_catpos($catid, '', true, '<a href="[url]">[name]</a>')}
+            
+</blockquote> -->
+
+<!-- <div class="content01 clearfix">
+
+    <div class="cleft fl clearfix">
+    <ul>
+        {list action=module catid=$catid order=displayorder,updatetime num=5}
+        <li>
+                <div class="cpimg"><a href="{$t.url}"><img src="{dr_thumb($t.thumb)}" style="height: 100%;width: 100%;"/></a></div>
+                <div class="cpinfo"><p><a href="{$t.url}">{$t.title}</a> </p></div>
+                <div class="cpinfo2"><p><a href="{$t.url}">{$t.title}</a> </p></div>
+            </li>
+        {/list}
+        </ul>
+    </div>
+</div>
+ -->
+<script type="text/javascript" src="template/pc/guangxun/src/js/swiper.min.js"></script>
+
+{list action=category id=$catid num=1 return=b}
+
+<section class="nr-banner a-background" style="background-image: url({dr_thumb($b.thumb)});">
+
+{/list}
+        <div class="width-1220">
+            <!-- {list action=category id=$catid num=1 return=c}
+            <h1 class="wow fadeInUpa">{$c.name}</h1>
+            {/list}
+            <p class="wow fadeInUpa" data-wow-delay=".2s" >{dr_clearhtml($c.content)}</p> -->
+            <h1 class="wow fadeInUpa">资讯中心</h1>
+            <p class="wow fadeInUpa" data-wow-delay=".2s" >每一条动态都是我们前进的脚步</p>
+        </div>
+    </section>
+
+    <!-- <section class="border-bottom" >
+        <p class="width-1220 new-fh"><a href="index.php?c=category&id=10"><img src="template/pc/guangxun/src/images/j-7.png"/>返回新闻中心</a></p>
+
+    </section> -->
+    <div class="S_menu">
+            <div class="w1280">
+                <p><a href="/index.php?c=category&id={$catid}" class="cur">资讯中心</a></p>
+                <div>
+                    <span>您当前位置：</span>
+                    <a href="/">首页</a>
+                    <a href="/index.php?c=category&id=10" class="cur">资讯中心</a>
+                </div>
+            </div>
+        </div>
+
+    <section class="width-1220 new-nr">
+        <h1 class="new-title">{$title}</h1>
+        <p class="new-time border-bottom">{$inputtime}</p>
+        <div class="new-nr-con">
+            {$content}
+        </div>
+
+
+
+    </section>
+
+
+<!-- <script type="text/javascript" src="/statics/default/js/jquery.js"></script> -->
+<script type="text/javascript" src="/statics/default/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/statics/default/js/jquery.SuperSlide.2.1.2.js"></script> -->
+<!-- <script type="text/javascript" src="template/pc/guangxun/src/js/layout.js"></script> -->
+
+<script type="text/javascript">
+ //JS代码部分
+ $(function(){
+     $(".content .cleft").find("li").hover(function(){
+        $(this).find("p").css("color","#217ac6");
+     },function(){
+         $(this).find("p").css("color","#333");
+     })
+ })
+</script>
+
+<script type="text/javascript">
+     var is_weixin = (function(){return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1})();
+        if(is_weixin){
+             $(function(){
+                 document.getElementById('logolink').onclick = function(ev){
+                    ev.preventDefault();
+                     $(".wxopen").show();
+                 }
+
+                 $(".wxopen,.wxopen>img").click(function(){
+                     $(".wxopen").hide();
+                 });
+             });
+        }else{
+             $(function(){
+                     return false;
+             });
+        }
+
+            $(document).ready(function() {
+                 $("#wxbox").hover(function(){
+                     $(this).addClass("footer-6_hover");
+                     $(this).children(".wxbox").show();
+                 },function(){
+                    $(this).removeClass("footer-6_hover");
+                     $(this).children(".wxbox").hide();
+                 });
+                 $("#wxbox2").hover(function(){
+                     $(this).addClass("footer-6_hover");
+                     $(this).children(".wxbox").show();
+                 },function(){
+                    $(this).removeClass("footer-6_hover");
+                     $(this).children(".wxbox").hide();
+                 });
+            });
+        </script>
+
+<script>
+        //新闻二级导航下拉年份月份下拉
+        $('.nr-nav-xl').click(function(){
+            if(!$(this).hasClass('hover')){
+                $(this).find('div').slideDown()
+                $(this).addClass('hover')
+            }else{
+                $(this).removeClass('hover')
+                $(this).find('div').slideUp()
+            }
+        })
+        //$(document).on('click',function(e){
+        //    var e = e || window.event; //浏览器兼容性
+        //    var elem = e.target || e.srcElement;
+        //    while (elem) { //循环判断至跟节点，防止点击的是div子元素
+        //        if (elem.id && elem.id=='year' || elem.id && elem.id=='month'  ) {
+        //            return;
+        //        } //如果还有别的div不想点击，就加else if判断
+        //        elem = elem.parentNode;
+        //    }
+            //这里写你想实现的效果
+        //    $('.nr-nav-xl').removeClass('hover');
+        //    $('.nr-nav-xl').find('div').slideUp();
+        //  });
+    </script>
+    <script>
+        $(function(){
+
+                        //固定下拉菜单
+                        var headerHeight= $('header').outerHeight();//获得header高度外部高度
+
+            var nrnavHeight = $('#nrnav-box').outerHeight();//获得nrnav-boxr高度外部高度
+            var nrnavTop = $('#nrnav-box').offset().top;//获得nrnav-boxr高度上部高度
+            $(window).scroll(function(){
+                            if($(window).scrollTop()>nrnavTop-headerHeight){
+                                $('header').addClass("headeractive")
+                                    $('#nrnav-box').addClass('hxjs-nav_active');
+                                    $('#nrnav-box').css('top',0)
+                            }else{
+                                $('header').removeClass('headeractive');
+                                    $('#nrnav-box').removeClass('hxjs-nav_active');
+                                    $('#nrnav-box').css('top',0)
+                            };
+            })
+                        //
+
+
+                //二级分类向上滚动
+                var _hash_a=location.hash.substring(1);
+                go_hash(_hash_a);
+        })
+        function go_hash(_hash){
+                //console.log(_hash);
+                var headerHeight= $('header').outerHeight();
+                var nrnavHeight = $('.nr-banner').outerHeight();
+                console.log(headerHeight,nrnavHeight)
+                if(_hash=="nrnav-box"){
+        roll = nrnavHeight;
+                        $('html , body').animate({scrollTop: roll},0.01);
+                }
+        }
+    </script>
+
+<!--[if IE 6]>
+<script type="text/javascript" src="/statics/default/js/DD_belatedPNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix(".");
+</script>
+<![Endif]-->
+{template "footer.html"}

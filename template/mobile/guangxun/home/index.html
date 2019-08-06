@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en" class="home">
+
+<head>
+    <meta charset="UTF-8">
+    <title>华浦科技</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" />
+    <script type="text/javascript" src="{ROOT_THEME_PATH}mobile/src/js/default.js"></script>
+    <script type="text/javascript" src="{ROOT_THEME_PATH}mobile/src/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="{ROOT_THEME_PATH}mobile/src/js/fastclick.js"></script>
+    <link rel="stylesheet" href="{ROOT_THEME_PATH}mobile/src/css/phone_base.css" type="text/css">
+    <link rel="stylesheet" href="{ROOT_THEME_PATH}mobile/src/css/phone_home.css" type="text/css">
+    <script>
+        $(function () {
+            FastClick.attach(document.body);
+            $('#case_btn').click(function () {
+                if ($('.up_nav').is(':hidden')) {
+                    $('.up_nav').fadeIn();
+                } else {
+                    $('.up_nav').fadeOut();
+                }
+            });
+        });
+        function gotest() {
+            window.location.href = "down.html";
+        }
+    </script>
+</head>
+
+<body>
+<div class="home_scroll">
+ <img src="image/tens_5.png" alt="" class="logo_title">
+    <div class="nav_all">
+        {list action=category pid=0}
+        <a href="{$t.url}"> <img src="{ROOT_THEME_PATH}mobile/src/images/tens_n4.png" alt="" class="n2">{$t.name}</a>
+        {/list}
+        <!-- <a href="detail.html?t=10&tf=5089"><img src="image/tens_n2.png" alt="" class="n2"></a> -->
+       
+    </div>
+    <img src="image/tens_6.png" alt="" class="go_test" onclick="gotest()">
+</div>
+    <img src="{ROOT_THEME_PATH}mobile/src/images/tens_4.png" class="lang" alt="">
+    <div class="footer">
+        <a href="/" class="left_line">
+            <img src="{ROOT_THEME_PATH}mobile/src/images/tens_7.png" alt="" class="icon_nav">
+            <span class="icon_nav_text">首页</span>
+        </a>
+        <a href="index.php?c=category&id=15" class="left_line">
+            <img src="{ROOT_THEME_PATH}mobile/src/images/tens_8.png" alt="" class="icon_nav">
+            <span class="icon_nav_text">公司</span>
+        </a>
+        <!-- <span class="left_line" id="case_btn">
+                <img src="{ROOT_THEME_PATH}mobile/src/images/tens_9.png" alt="" class="icon_nav">
+                <span class="icon_nav_text">案例</span>
+        <div class="up_nav">
+            <a href="customer.html">客户典例</a>
+            <a href="caseAll.html">客户汇总</a>
+        </div>
+        </span> -->
+        <a href="index.php?c=category&id=10" class="right_line">
+            <img src="{ROOT_THEME_PATH}mobile/src/images/tens_9.png" alt="" class="icon_nav">
+            <span class="icon_nav_text">新闻</span>
+        </a><a href="my.html" class="right_line">
+            <img src="{ROOT_THEME_PATH}mobile/src/images/tens_10.png" alt="" class="icon_nav">
+            <span class="icon_nav_text">我的</span>
+        </a>
+    </div>
+</body>
+
+</html>

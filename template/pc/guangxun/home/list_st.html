@@ -1,0 +1,231 @@
+
+{template "header.html"}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>走进华浦 - 华浦科技</title>
+    <meta name="keywords" content="关键词" />
+    <meta name="description" content="描述" />
+    <!-- <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/public.css" /> -->
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/erji.css" />
+    <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/iconfont.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="template/pc/guangxun/src/css/font.css" /> -->
+    <!-- [if IE 7]>
+    <link type="text/css" rel="stylesheet" href="/statics/default/css/ie7.css" />
+    <![endif] -->
+
+<script type="text/javascript" src="template/pc/guangxun/src/js/swiper.min.js"></script>
+<script type="text/javascript" src="template/pc/guangxun/src/js/bootstrap.js"></script>
+    {category module=share id=$catid num=1 return=b}
+{category module=share id=$b.pid num=1 return=b1}
+<section class="nr-banner a-background" style="background-image: url({dr_thumb($b1.thumb)});">
+        <div class="width-1220">
+
+            <h1 class="wow fadeInUpa">{$b1.name}</h1>
+
+            <p class="wow fadeInUpa" data-wow-delay=".2s">{dr_clearhtml($b1.content)}</p>
+{/category}
+{/category}
+
+        </div>
+    </section>
+
+    <!--二级导航-->
+    <section id="nrnav-box">
+        <div class="hxjs-nav" id="product">
+        <div class="hxjs-nav1" style="position: relative;">
+            {category module=share id=$catid num=1 return=c}
+
+            {category module=share id=$c.pid num=1 return=c1}
+            <div class="hxjs-nav2"><span style="padding-right: .2rem;">{$c1.name}</span>
+                <!-- <span class="glyphicon glyphicon-menu-down"></span> -->
+                <span class="mui-icon mui-icon-arrowdown"></span>
+            </div>
+            {/category}
+            {/category}
+            <div class="hxjs-nav3">
+                <div class="box_Arrow"></div>
+                {category module=share id=$catid num=1 return=c}
+
+                {category module=share id=$c.pid num=1 return=c1}
+                
+                {category module=share pid=$c1.id return=c2}
+                
+                {if $key==0}
+                <a href="{$c2.url}" class="hover">{$c2.name}</a>
+                {else}
+                <a href="{$c2.url}">{$c2.name}</a>
+                {/if}
+                {/category}
+                {/category}
+                {/category}
+            </div>
+        </div>
+        <p>{$c.name} </p>
+        </div>
+    </section>
+
+    <!--第二个banner-->
+    <section class="hxjs-banner m-center">
+        <p class="wow fadeInUpa delay-2 width-1220"><i class="sensetime sensetime-renlianyurentifenxijishu"></i>{$c.name}</p>
+        <div class="width-1220 Technology_banner  a-background" style="background-image: url('{dr_thumb($c.thumb)}');"></div>
+    </section>
+
+    <section>
+        <div class="width-100 hxjs-menu">
+            <!-- <h1 class="hxjs-title1 width-1220">技术能力</h1> -->
+        </div>  
+        
+        <div class="width-1220 hxjs-xg-1">
+        <!--标题-->
+            <div class="hxjs-menu-box" id="hxjsMenu">
+
+                {list action=module catid=$catid order=id_desc}
+                        {if $key==0}
+                         <div class="hxjs-menu-item active">{$t.title}</div>
+                        {else}
+                        <div class="hxjs-menu-item">{$t.title}</div>
+                        {/if}
+                        {/list}
+
+                
+            </div>
+            
+                    <div class="hxjs-con-box" id="hxjsCon">
+            <div class="swiper-wrapper">
+
+
+                {list action=module catid=$catid order=id_desc}
+                
+                <div class="swiper-slide hxjs-con-item">
+                    
+                    <div class="hxjs-con-left width-50">
+                        <div>
+                            <h2 class="wo delay-5"><a href="javascript:void(0);" onclick="window.location.href='{$t.url}'">{$t.title}</a></h2>
+                            <!-- <h2 class="wo delay-5"><a href='{$t.url}'>{$t.title}</a></h2> -->
+                            <p class="wo delay-7">{$t.description}</p>
+                        </div>
+                    </div>
+
+                    <!-- <?php $img=dr_thumb($t.thumb); ?> -->
+                    {if $t.thumb}
+                    <div class="width-50 a-background" style="background-image: url('{dr_thumb($t.thumb)}');"></div>
+                    {else}
+                    <div class="width-50 a-background" style="background-image: url('{SITE_URL}template/pc/guangxun/src/images/Technology_autodrive10.jpg');"></div>
+                    {/if}
+                </div>
+                {/list}   
+
+            </div>
+
+
+
+        </div>
+            
+            
+        </div>  
+            
+            
+        
+<script>
+        $(function(){
+            //二级导航下拉
+                        $('.hxjs-nav1').click(function(){
+                            event.stopPropagation();
+                                if($(this).hasClass('active')){
+                                        $(this).find('.hxjs-nav3').slideUp();
+                                        $(this).removeClass('active')
+                                }else{
+                                        $(this).find('.hxjs-nav3').slideDown()
+                                        $(this).addClass('active')
+                                }
+                        });
+                        $('body').on('click',function(){
+                            $('.hxjs-nav1').removeClass('active');
+                            $('.hxjs-nav1').find('.hxjs-nav3').slideUp();
+                        })
+                        //固定下拉菜单
+                        var headerHeight= $('header').outerHeight();//获得header高度外部高度
+
+            var nrnavHeight = $('#nrnav-box').outerHeight();//获得nrnav-boxr高度外部高度
+            var nrnavTop = $('#nrnav-box').offset().top;//获得nrnav-boxr高度上部高度
+            $(window).scroll(function(){
+                            if($(window).scrollTop()> nrnavTop){
+                                $('header').addClass("headeractive")
+                            } else {
+                                $('header').removeClass('headeractive');
+                            }
+                                if($(window).scrollTop()>nrnavTop){
+                                        $('#nrnav-box').addClass('hxjs-nav_active');
+                                        $('#nrnav-box').css('top',0)
+                }else{
+                    $('#nrnav-box').removeClass('hxjs-nav_active');
+                    $('#nrnav-box').css('top',0)
+                };
+            })
+                        //
+        })
+    </script>
+
+
+
+
+
+
+        <script>
+             var hxjsCon = new Swiper('#hxjsCon', {
+                autoHeight: true, //高度随内容变化
+                effect : 'fade',
+                onSlideChangeStart: function(swiper){
+                    $('#hxjsMenu').find('.hxjs-menu-item').removeClass('active');
+                    $('#hxjsMenu').find('.hxjs-menu-item').eq(swiper.activeIndex).addClass('active');
+
+                },
+                onSlideChangeEnd: function(swiper){
+                    $('#hxjsCon').find('.swiper-slide').find('.wo').removeClass('zhixing');
+                    $('#hxjsCon').find('.swiper-slide').eq(swiper.activeIndex).find('.wo').addClass('zhixing');
+                },
+            });
+            $('#hxjsMenu').find('.hxjs-menu-item').each(function(i){
+                $(this).click(function(){
+                    $('#hxjsMenu').find('.hxjs-menu-item').removeClass('active');
+                    $(this).addClass('active');
+                    hxjsCon.slideTo(i, 500, true);
+                })
+            });
+        </script>
+
+
+    </section>
+
+
+    
+
+
+
+<!-- <script type="text/javascript" src="/statics/default/js/jquery.js"></script> -->
+<!-- <script type="text/javascript" src="template/pc/guangxun/src/js/jquery.min.js"></script> -->
+<script type="text/javascript" src="template/pc/guangxun/src/js/wow.js"></script>
+<script type="text/javascript" src="template/pc/guangxun/src/js/js.js"></script>
+<script type="text/javascript" src="template/pc/guangxun/src/js/scrollBar.js"></script>
+<!-- <script type="text/javascript" src="/statics/default/js/jquery.SuperSlide.2.1.2.js"></script> -->
+<!-- <script type="text/javascript" src="template/pc/guangxun/src/js/layout.js"></script> -->
+
+<script type="text/javascript">
+ //JS代码部分
+ $(function(){
+     $(".content .cleft").find("li").hover(function(){
+        $(this).find("p").css("color","#217ac6");
+     },function(){
+         $(this).find("p").css("color","#333");
+     })
+ })
+</script>
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="/statics/default/js/DD_belatedPNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix(".");
+</script>
+<![Endif]-->
+{template "footer.html"}

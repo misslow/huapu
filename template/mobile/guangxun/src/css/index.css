@@ -1,0 +1,529 @@
+﻿/*.top{width: 100%;height: 40px; background-color: #fff; border-bottom: #ddd 1px solid;}
+.top .tmid{width: 1200px;height: 40px;margin: 0 auto;}
+.top .tmid .tmcontent{position: relative; width:auto;height: 40px;}
+.top .tmid .tmcontent img{position: absolute;top:11px;left: 0;width: 30px;height: 18px;}
+.top .tmid .tmcontent span{font-size: 12px;line-height: 40px;color: #333; margin-left: 40px;}
+.top .tmid .tmcontent .search{width: 140px; height: 22px; border: 1px solid #ddd; margin-left: 15px; margin-right: 32px; padding: 0 10px;}
+.top .tmid .tmcontent .dj{position: absolute;top: 7px;right: 0; width: 32px; height: 24px; background:url("../images/djbg.jpg") no-repeat;}
+.top .tmid .tmcontent a{color:#555;}
+.top .tmid .tmcontent a:hover{color:#217ac6;}
+
+.header{width: 1200px; height: 40px; margin: 20px auto 15px;}
+.header .logo{width: 200px; height: 40px;}
+.header .menu{width: auto ;height: 40px;}
+.header .menu li{float: left; margin-left: 50px; margin-top: 5px;}
+.header .menu li a{display: block;width: auto;height: 40px;font-size: 16px;line-height: 35px; color: #333;}
+.header .menu li a:hover{color:#217ac6;}
+.header .menu .on a{color:#217ac6;}*/
+
+.banner0{position: relative; width: 100%;height: 600px;}
+.banner0 .bimg{width: 100%; height: 600px;}
+.banner0 .bimg li{width: 100%;height: 600px;}
+.banner0 .hd{position: absolute; left:50%;margin-left: -570px; bottom: 30px; width: auto;height: 16px;}
+.banner0 .hd li{width: 16px;height: 16px;  background-color: #fff; margin-right: 10px; float: left;}
+.banner0 .hd .on{background-color: #f34040;}
+/*.banner0 .tmarea{position: absolute; right: 50%;margin-right: -600px;bottom: 0; width: 280px; height: 280px; background:url("../images/tmbg.png") repeat;}*/
+.banner0 .tmarea{position: absolute; right: 50%;margin-right: -600px;bottom: 0; width: 280px; background:url("../images/tmbg.png") repeat;}
+.banner0 .tmarea .ss{position: relative; width: 280px; height: 46px; background: url("../images/tm3.png") repeat; margin-top: 34px;}
+/*.banner0 .tmarea .tmlist{width: 280px; height: 200px;}*/
+.banner0 .tmarea .tmlist li{position: relative; width: 240px;height: 40px; background:url("../images/tm1.png") repeat; margin-bottom: 1px;padding: 0 20px;}
+.banner0 .tmarea .tmlist li a{display: block;width: 240px;height: 40px; font-size: 16px;line-height: 40px;color: #fff;}
+.banner0 .tmarea .tmlist li:hover{background: url("../images/tm2.png") repeat;}
+.banner0 .tmarea .tmlist li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -6px; width: 8px;height: 14px; background: url("../images/ico2.png") no-repeat;}
+.banner0 .tmarea .ss .ip{width: 190px;height:30px;background-color: #f5f6f5; margin-top: 9px; margin-left: 20px;font-size: 14px;line-height: 30px;color: #999999; padding: 0 10px;}
+.banner0 .tmarea .ss .btn{position: absolute;right: 10px; top: 9px; width: 30px;height: 30px; background: url("../images/ico3.png") no-repeat; cursor: pointer;}
+
+.content{width: 1200px;height: auto; margin: 20px auto;}
+.content .fgx{position: relative; width: 100%;height: 1px; background-color: #ddd;margin-top: 60px;}
+.content .fgx .info{position: absolute;top: -13px;left: 50%;margin-left: -100px; width: 200px;height: 26px; background-color: #fff;border-left: 2px solid #ddd;border-right: 2px solid #ddd; text-align: center;font-size: 28px;line-height: 26px;color: #014099;}
+.content .company{position: relative; width: 100%;height: 275px; margin-top: 80px;}
+.content .company .list{width: 1100px;height: 250px; margin: 0 auto; overflow: hidden;}
+.content .company .list ul{width: 1180px;}
+.content .company .list li{width: 230px; height: 250px; text-align: center; float: left; margin-right: 60px;}
+.content .company .list li .limg{width: 82px;height: 82px; border-radius: 50%; background-color: #08aded; margin: 0 auto;}
+.content .company .list li .p1{font-size: 18px; line-height: 36px; color: #333; margin-top: 10px;}
+.content .company .list li .p2{font-size: 14px; line-height: 28px;color: #666;}
+.content .company .list li .p3{font-size: 12px;line-height: 20px;color:  #9e9e9e; margin-top: 3px;}
+.content .company .list li:hover .limg{ background-color: #f05960;}
+.content .company .list li:hover .p1{color: #f05960;}
+.content .company .arrArea{position: absolute;top: 40px;left: 0; width: 1200px; height: 40px;}
+.content .company .arrArea .prev{width: 23px;height: 40px; background: url("../images/prev.jpg") no-repeat;}
+.content .company .arrArea .next{width: 23px;height: 40px; background: url("../images/next.jpg") no-repeat;}
+.content .news ul{width: 1300px;}
+.content .news li{width: 348px; margin-right: 75px;height: auto; float: left;}
+.content .news li img{width: 350px; height: 200px;}
+.content .news{width: 100%;height: 400px; margin-top: 60px; overflow: hidden;}
+.content .news .p4 a{font-size: 16px;line-height: 32px;color: #333;}
+.content .news .p5{font-size: 12px;line-height: 32px; color: #999;}
+.content .news .p6{font-size: 12px;line-height: 20px;color: #666; margin-top: 20px;}
+.content .news .newico{width: 20px;height: 20px;background: url("../images/ico4.png") no-repeat 6px 6px;border: 1px #bfbfbf solid;border-radius: 7px;margin-top: 10px; }
+.content .news li:hover .p4 a{color: #217ac6;}
+.content .news li:hover .newico{background: url("../images/ico5.png")no-repeat 6px 6px; background-color: #217ac6;}
+
+
+/*浜у搧涓績*/
+.bannera{width: 100%;height: 400px; background: url("../images/cpbanner.jpg") no-repeat center center;}
+.content01{width: 1200px;height: auto;margin: 0 auto; padding: 50px 0;}
+.content01 .cleft{height: 250px;width: 970px; overflow: hidden;}
+.content01 .cleft ul{width: 975px;}
+.content01 .cleft li{position: relative; width: 190px; height: 250px; float: left; margin-right: 5px;}
+.content01 .cleft li .cpinfo{width: 190px;height: 70px; background-color: #217ac6;}
+.content01 .cleft li .cpimg{width: 190px;height: 180px;}
+.content01 .cleft li .cpinfo P a{display: block;width: 190px;height: 70px;font-size: 14px;line-height: 70px;text-align: center;color: #fff;}
+.content01 .cleft li .cpinfo2{position: absolute;bottom: 0;left: 0;width: 190px;height: 100px;background-color: #f05960;display: none;}
+.content01 .cleft li .cpinfo2 p a{display: block;width: 190px;height: 70px;font-size: 14px;line-height: 70px;text-align: center;color: #fff;}
+.content01 .cleft li .cpinfo2 p{margin-top: 30px;}
+.content01 .cleft li:hover img{filter:alpha(opacity=90); -moz-opacity:0.9; -khtml-opacity: 0.9; opacity: 0.9; }
+.content01 .cleft li:hover .cpinfo{background-color: #d93034;}
+.content01 .cright{width: 180px;height: 250px;}
+.content01 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content01 .cright li{position: relative; width: 170px;height: 32px; background-color: #7e7e7e; margin-top: 1px;padding-left: 10px;}
+.content01 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content01 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content01 .cright li .tmico{position: absolute;right: 15px;top: 11px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content01 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content01 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content01 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+/*瑙ｅ喅鏂规*/
+.banner1{width: 100%;height: 400px; background: url("../images/jjbanner.jpg") no-repeat center center;}
+
+.content1{width: 1200px;height: auto; margin: 50px auto;}
+.content1 .cleft{position: relative; width: 969px;height: 550px;}
+.content1 .cleft .arrArea{position: absolute;bottom: 0;left: 50%;margin-left: -138px; width: 286px;height: 46px;}
+.content1 .cleft .arrArea .prev{width: 46px;height: 46px;background: url("../images/clprev.jpg") no-repeat}
+.content1 .cleft .arrArea .next{width: 46px;height: 46px;background: url("../images/clnext.jpg") no-repeat}
+.content1 .cleft .hd{width: 192px; height: 16px; margin: 55px auto 0;}
+.content1 .cleft .hd .on{background-color: #d93034}
+.content1 .cleft .hd li{width: 16px;height: 16px;border-radius: 50%; background-color: #aaa;float: left; margin-left: 15px;}
+.content1 .cleft .clmid{width: 969px;height: 465px;}
+.content1 .cleft .clmid li{width: 323px; height: 465px;float: left;}
+.content1 .cleft .clmid .mimg{width: 323px;height: 232px;}
+.content1 .cleft .clmid .minfo{position: relative; width: 323px;height: 198px; background-color: #217ac6; text-align: center; padding-top: 35px;}
+.content1 .cleft .clmid .minfo em{position: absolute;left: 154px; width: 15px;height: 9px; background: url("../images/jjico1.png") no-repeat;}
+.content1 .cleft .clmid .minfo h3{font-size: 18px;line-height: 36px; color: #fff;font-weight: normal;padding-top: 44px;}
+.content1 .cleft .clmid .minfo .ico1{width: 15px; height: 1px;background-color: #fff; margin:10px auto;}
+.content1 .cleft .clmid .minfo p{width: 90%;font-size: 12px;line-height: 18px;color: #fff; margin-left: 25px; text-align: left;}
+.content1 .cleft .clmid .minfo .ico2{position: absolute;bottom: 30px;left: 50%;margin-left: -15px; width: 30px;height: 30px; background: url("../images/jjico5.png") no-repeat;}
+.content1 .cright{width: 180px;height: auto;}
+
+.content1 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content1 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content1 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content1 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content1 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content1 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content1 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content1 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+/*鏂伴椈涓績*/
+.banner2{width: 100%;height: 400px; background: url("../images/newbanner.jpg") no-repeat center center;}
+
+.content2{width: 1200px;height: 420px;margin: 50px auto; }
+.content2 .cleft{width: 980px;height: 420px;}
+.content2 .cleft li{width: 480px;height: 200px; margin-right: 10px; margin-bottom: 10px;float: left;}
+.content2 .cleft li .lileft{width: 280px; height: 200px;}
+.content2 .cleft li .liright{position: relative; width: 200px; height: 200px; background: #217ac6;text-align: center;}
+.content2 .cleft li .liright h3{font-size: 18px;line-height: 24px; color: #fff;font-weight: normal; margin-top: 50px;}
+.content2 .cleft li .liright em{position: absolute;left: 50%;margin-left: -15px;bottom: 55px; display: block;width: 30px;height: 30px;background: url("../images/newico1.png") no-repeat;}
+.content2 .cleft li a:hover .liright{background-color: #f05960;}
+.content2 .cright{width: 180px;height: 420px;}
+
+.content2 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content2 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content2 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content2 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content2 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content2 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content2 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content2 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+/*鏈嶅姟涓績*/
+.banner3{width: 100%;height: 400px; background: url("../images/newbanner.jpg") no-repeat center center;}
+
+.content3{width: 1200px;height: 344px;margin: 50px auto; }
+.content3 .cleft{width: 970px; height: 344px;overflow: hidden;}
+.content3 .cleft ul{width: 1020px;}
+.content3 .cleft li{position: relative; width: 440px; height: 324px;float: left;margin-left:45px; }
+.content3 .cleft .limg1{width: 440px; height: 324px;}
+.content3 .cleft .limg2{position: absolute;left: 0;top:-0px; width: 460px; height: 344px;  background-color: rgba(0,0,0,0.5); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);  text-align: center; display: none;}
+.content3 .cleft .limg2 h3{font-size: 36px; line-height: 36px; color: #fff; margin-top: 150px;font-weight: normal;}
+.content3 .cleft li a:hover .limg2{display: block;}
+.content3 .cright{width: 180px; height: 420px;}
+.content3 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content3 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content3 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content3 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content3 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content3 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content3 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content3 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+/*浜烘墠鎷涜仒*/
+.banner4{width: 100%;height: 400px; background: url("../images/zpbanner.jpg") no-repeat center center;}
+
+.content4{width: 1200px;height: 380px;margin: 50px auto 90px; padding-top: 40px; }
+.content4 .cleft ul{padding-left:100px;}
+.content4 .cleft li{text-align: center; float: left; width: 400px; height: 340px; text-align:center; padding-top: 40px;}
+.content4 .cleft li .lipic{width: 210px; height: 210px;border-radius: 50%;background-color: #217ac6; margin:0 auto;}
+.content4 .cleft li .p1{font-size: 18px; line-height: 24px;color: #333; margin-top: 50px;}
+.content4 .cleft li .p2{font-size: 12px;line-height: 24px;color: #333;}
+.content4 .cright{width: 180px; height: 380px;}
+.content4 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content4 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content4 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content4 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content4 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content4 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content4 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content4 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+/*鑱旂郴鎴戜滑*/
+.banner5{width: 100%;height: 400px; background: url("../images/lxbanner.jpg") no-repeat center center;}
+
+.content5{width: 1200px;height: 344px;margin: 50px auto;  }
+.content5 .cleft{width: 970px; height: 344px;}
+.content5 .cleft .limg{width: 550px;height: 344px;}
+.content5 .cleft .limg img{width: 550px;height: 344px;}
+.content5 .cleft .linfo{width: 390px; height: 344px; background-color: #f0f0f0; padding: 0 15px;}
+.content5 .cleft .linfo .liup{width: 390px;height: 86px;border-bottom: 1px solid #ccc; background: url("../images/lxico1.png") no-repeat 107px 70px; padding-top:85px;}
+.content5 .cleft .linfo .lidown{width: 390px;height: 122px; background: url("../images/lxico2.png") no-repeat 107px 37px;padding-top:50px;}
+.content5 .cleft .linfo h2{font-size: 30px;line-height: 30px;font-weight: normal;color: #333;margin-left: 175px;}
+.content5 .cright{width: 180px; height: 380px;}
+.content5 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content5 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content5 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content5 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content5 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content5 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content5 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content5 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+/*璧拌繘鍏夎繀*/
+.banner6{width: 100%;height: 400px; background: url("../images/comimg.jpg") no-repeat center center;}
+
+.content6{width: 1200px;height: 550px;margin: 50px auto;  }
+.content6 .cleft{width: 1000px; height: 550px;}
+.content6 .cleft li{width: 220px; height: 255px;margin-right: 30px; float: left;text-align: center; margin-bottom: 20px; margin-bottom: 40px;}
+.content6 .cleft li a p{font-size: 18px;line-height: 35px;color: #333;}
+.content6 .cright{width: 180px; height: 550px;}
+.content6 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content6 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content6 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content6 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content6 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content6 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content6 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content6 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+/*鍏徃鍘嗙▼*/
+.banner{width: 100%;height: 400px; }
+
+.content7{width: 1200px;height:900px;margin: 50px auto;  }
+.content7 .cleft{position: relative; width:970px; height: 800px;text-align: center }
+.content7 .cleft h2{font-size: 30px;line-height: 30px;color: #217ac6;font-weight: normal;}
+
+.content7 .cleft .prev,.content7 .cleft .next{position: absolute; top: 88px; z-index: 999; height: 52px;width: 20px;}
+.content7 .cleft .prev{left: 0; background:url("../images/arrico1.png") no-repeat;}
+.content7 .cleft .next{right: 0; background:url("../images/arrico2.png") no-repeat;}
+.content7 .cleft .tmlist{position: relative; width: 910px;height: 142px; padding: 0 30px;margin-top: 10px; z-index: 99;}
+.content7 .cleft .tmlist em{position: absolute;top: 50%;margin-top: 3px;left: 30px; display: block;width: 910px; height: 4px; background-color: #217ac6;}
+.content7 .cleft .tmlist ul{width: 970px;height: 202px;}
+.content7 .cleft .tmlist li{position: relative; width: 130px; height: 152px; float: left;background: url("../images/timeico1.png") no-repeat 25px 0;margin-top: 50px; }
+.content7 .cleft .tmlist .on{background: url("../images/timeico2.png") no-repeat 25px 0;}
+.content7 .cleft .tmlist .on span{ color: #ffa300;}
+.content7 .cleft .tmlist li span{position: absolute; left: 20px;top: -30px; font-size: 18px;line-height: 24px; color: #333;}
+.content7 .cleft .cominfo{width: 910px;height: 600px;background-color: #e7e7e7; margin: 50px auto;}
+.content7 .cleft .cominfo li{width: 910px;height: 600px; display: none;}
+.content7 .cleft .cominfo .on{display: block;}
+.content7 .cleft .cominfo li img{width: 910px;height: 480px;}
+.content7 .cleft .cominfo li .cidown{width: 910px;height: 120px;}
+.content7 .cleft .cominfo li .cidown .cidleft{width: 70px;height: 120px;font-size: 40px; line-height: 120px; color: #217ac6;padding-left: 30px;}
+.content7 .cleft .cominfo li .cidown .cidright{width: 740px; height: 30px; padding: 30px 15px; text-align: left;}
+.content7 .cleft .cominfo li .cidown .cidright p{font-size: 14px;line-height: 28px;color: #333;}
+
+
+.content7 .cright{width: 180px; height: 550px;}
+.content7 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content7 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content7 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content7 .cright .on{background: url("../images/tm2.png") repeat;}
+.content7 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content7 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content7 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content7 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content7 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+/*浜у搧鍒楄〃*/
+.banner8{width: 100%;height: 400px; background: url("../images/cplistbanner.jpg") no-repeat center center;}
+
+.content8{width: 1200px;min-height: 800px; *+height:100%; _height:800px; margin: 0 auto; padding: 50px 0;}
+.content8 .cleft{width: 970px; min-height: 800px; *+height:100%; _height:800px; text-align: center; }
+.content8 .cleft h2{font-size: 30px;line-height: 30px; color: #333;font-weight: normal;}
+.content8 .cleft ul{width: 970px;height: auto;margin-top: 40px;}
+.content8 .cleft li{width: 970px; height: 160px; background-color: #f4f4f4; margin-bottom: 25px;}
+.content8 .cleft li .limg{width: 240px;height: 160px;}
+.content8 .cleft li .limg img{width: 190px;height: 126px; border: 1px solid #ddd; margin-top: 16px;}
+.content8 .cleft li .pright{position: relative; width: 700px; height: 140px; text-align: left;padding-top: 20px;padding-right: 30px;}
+.content8 .cleft li .pright .p1{font-size: 18px;line-height: 24px; color: #444;}
+.content8 .cleft li .pright .p2{font-size: 14px;line-height: 24px; color: #444;margin-top: 10px;}
+.content8 .cleft li .pright .ck{position: absolute;right: 30px;top: 15px; width: 120px;height: 40px;}
+.content8 .cleft li .pright .ck .em1{;width: 20px;height: 14px; margin-top: 13px;}
+.content8 .cleft li .pright .ck .em2{;width: 20px;height: 14px; margin-top: 13px;margin-left: 12px;}
+.content8 .cleft li .pright .ck span{font-size: 14px;line-height: 40px;color: #00419a; margin-left: 5px;}
+.content8 .cleft li .pright .ck span a{color: #00419a;}
+.content8 .cleft .fy{width: 100%; height: auto; text-align: center; margin: 0 auto;}
+.content8 .cleft .fy li{width: auto;height: 30px;float: left; background-color: #fff;border: 1px solid #d5d5d5; margin-left: 15px;}
+.content8 .cleft .fy li a{display: block;width: auto;height: 30px; font-size: 14px; line-height: 30px;color: #333;padding: 0 10px;}
+.content8 .cleft .fy li .on{background-color: #003586; color: #fff;}
+.content8 .cleft .fy li a:hover{background-color: #003586; color: #fff;}
+.content8 .cright{width: 180px;height: 250px;}
+.content8 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content8 .cright li{position: relative; width: 170px;height: 32px; background-color: #7e7e7e; margin-top: 1px;padding-left: 10px;}
+.content8 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content8 .cright .on{background: url("../images/tm2.png") repeat;}
+.content8 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content8 .cright li .tmico{position: absolute;right: 15px;top:11px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content8 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content8 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content8 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+/*鏂伴椈鍒楄〃*/
+.banner9{width: 100%;height: 400px; background: url("../images/newbanner.jpg") no-repeat center center;}
+
+.content9{width: 1200px;height: auto;margin: 50px auto; }
+.content9 .cleft{width: 970px; height: auto;}
+.content9 .cleft h2{text-align: center;font-size: 30px;line-height: 52px;color: #217ac6;font-weight: normal;width: 970px;}
+.content9 .cleft ul{margin-top: 20px;}
+.content9 .cleft li{width: 970px; height: auto; border-bottom: 1px solid #ddd; padding-top: 20px; padding-bottom: 20px;}
+.content9 .cleft li .npic{width:auto; height: 165px;}
+.content9 .cleft li .npic img{padding-right:40px; width:220px; height:164px;}
+.content9 .cleft li .ninfo{width: auto; height: 165px;}
+.content9 .cleft li .ninfo h3{font-size: 18px;line-height: 36px;font-weight: normal;color: #333;}
+.content9 .cleft li .ninfo h3 a{color: #333;}
+.content9 .cleft li .ninfo h3 a:hover{color: #217ac6;}
+.content9 .cleft li .ninfo p{font-size: 12px;line-height: 24px;color: #444;  width: 700px;}
+.content9 .cleft li .ninfo .time{width: auto;height: 18px; background:url("../images/newstico.png") no-repeat;margin-top: 30px;}
+.content9 .cleft li .ninfo .time span{font-size: 12px; line-height: 18px; color: #444;margin-left: 20px;}
+.content9 .cleft li .onimg{height:auto;}
+.content9 .cleft li .onimg p{font-size: 12px; line-height: 24px;color: #444;  width: 970px;}
+
+.content9 .cleft .fy{width: 100%; height: auto; text-align: center; margin:50px auto;}
+.content9 .cleft .fy li{width: auto;height: 30px;float: left; background-color: #fff;border: 1px solid #d5d5d5; margin-left: 15px; padding-top: 0;}
+.content9 .cleft .fy li a{display: block;width: auto;height: 30px; font-size: 14px; line-height: 30px; color: #333; padding: 0 10px;}
+.content9 .cleft .fy li .on{background-color: #003586; color: #fff;}
+.content9 .cleft .fy li a:hover{background-color: #003586; color: #fff;}
+.content9 .cright{width: 180px;height: 420px;}
+
+.content9 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content9 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content9 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content9 .cright .on{background: url("../images/tm2.png") repeat;}
+.content9 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content9 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content9 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content9 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content9 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+/*鏂伴椈璇︽儏*/
+.banner10{width: 100%;height: 400px; background: url("../images/newbanner.jpg") no-repeat center center;}
+
+.content10{width: 1030px;height: auto;margin: 50px auto; }
+.content10 .cleft{width: 800px;}
+.content10 .cleft h2{font-size: 24px;line-height: 36px; color: #444;font-weight: normal; text-align: center;width: 800px;}
+.content10 .cleft .p1{text-align: center; margin-top: 10px;}
+.content10 .cleft .xqbg{width: 800px; height: 30px;margin-top: 10px;}
+.content10 .cleft p{font-size: 14px;line-height: 24px;color: #444;margin: 10px 0;text-indent: 2em;}
+.content10 .cleft .newimg{width: 540px; height: auto; margin: 30px auto;}
+.content10 .cleft .newimg img{width: 540px;}
+.content10 .cleft .fx{width: auto; height: 24px; float: right; margin-top: 20px;}
+.content10 .cleft .fgx{width: 100%;height: 1px;background-color: #dfdfdf; margin-top: 100px;}
+.content10 .cleft .up{width: auto;height: 21px; line-height: 21px; background: url("../images/nsico1.jpg") no-repeat left center; margin-top: 30px;}
+.content10 .cleft .down{width: auto;height: 21x; line-height: 21px; background: url("../images/nsico2.jpg") no-repeat left center; margin-top: 10px;}
+.content10 .cleft .up span{ font-size: 14px;line-height: 16px; margin-left: 10px;}
+.content10 .cleft .up span a{color: #888;}
+.content10 .cleft .up span a:hover{color: #0089df; text-decoration: underline;}
+.content10 .cleft .down span{ font-size: 14px;line-height: 16px; margin-left: 10px;}
+.content10 .cleft .down span a{color: #888;}
+.content10 .cleft .down span a:hover{color: #0089df; text-decoration: underline;}
+.content10 .cright{width: 180px;height: auto;}
+
+.content10 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content10 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content10 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content10 .cright .on{background: url("../images/tm2.png") repeat;}
+.content10 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content10 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content10 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content10 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content10 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+/*鎷涜仒鍒楄〃*/
+.banner11{width: 100%;height: 400px; background: url("../images/zpbanner.jpg") no-repeat center center;}
+
+.content11{width: 1200px;height: auto;margin: 50px auto 90px; padding-top: 40px; }
+.content11 .cleft{width: 970px; height: auto;}
+.content11 .cleft h2{font-size: 30px;line-height: 36px;color: #217ac6;text-align: center;font-weight: normal;}
+.content11 .cleft table{width: 970px; margin-top: 50px;}
+.content11 .cleft table tr{width: 100%;height: 50px; border: 1px #ddd solid;text-align: center;}
+.content11 .cleft table th{width: 20%; height: 50px;text-align: center;font-size: 16px;line-height: 50px;color: #888;}
+.content11 .cleft table tr td{font-size: 14px; line-height: 50px;color: #444; border-bottom: 1px solid #dadada;}
+.content11 .cleft table tr td a{font-size: 14px; line-height: 50px;color: #444;}
+.content11 .cleft table tr td a:hover{color: #f05960;}
+
+.content11 .cright{width: 180px; height: 380px;}
+.content11 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content11 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content11 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content11 .cright .on{background: url("../images/tm2.png") repeat;}
+.content11 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content11 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content11 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content11 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content11 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+/*鑱旂郴鏂瑰紡*/
+.banner12{width: 100%;height: 400px; background: url("../images/lxbanner.jpg") no-repeat center center;}
+
+.content12{width: 1200px;height:auto;margin: 50px auto;  }
+.content12 .cleft{width: 970px; height: auto;overflow: hidden;}
+.content12 .cleft h2{width: 100%; font-size: 30px;line-height: 36px;color: #217ac6;font-weight: normal;text-align: center;}
+.content12 .cleft ul{width: 1050px;height: auto; margin-top: 80px;}
+.content12 .cleft li{position: relative; width: 428px;height: 200px;margin-right: 30px;border: 1px solid #ddd;padding: 0 20px;text-align: center; float: left;}
+.content12 .cleft li .ico{position: absolute;left: 50%;margin-left: -50px;top:-50px; width: 100px;height: 100px;}
+.content12 .cleft li .p1{font-size: 18px;line-height: 40px;color: #3b3b3b; margin-top: 60px;}
+.content12 .cleft li .p1{font-size: 15px;line-height: 40px;color: #3b3b3b; }
+.content12 .cleft li .wximg{width: 72px;height: 72px;margin: 5px auto;}
+.content12 .cleft .addpic{width: 100%;height: auto; margin-top: 45px;}
+.content12 .cright{width: 180px; height: 380px;}
+.content12 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content12 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content12 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content12 .cright .on{background: url("../images/tm2.png") repeat;}
+.content12 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content12 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content12 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content12 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content12 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+/*鍦ㄧ嚎鐣欒█*/
+.banner13{width: 100%;height: 400px; background: url("../images/lxbanner.jpg") no-repeat center center;}
+
+.content13{width: 1200px;height:auto;margin: 50px auto;  }
+.content13 .cleft{width: 970px; height: auto;}
+.content13 .cleft h2{width: 970px; font-size: 30px;line-height: 36px;color: #217ac6;font-weight: normal;text-align: center;}
+.content13 .cleft .ly{width: 285px; height: 32px; margin: 30px 30px 0 0;}
+.content13 .cleft .ly .lyico{width: 32px; height: 32px; margin-right: 10px;}
+.content13 .cleft .ly span{font-size: 14px;line-height: 32px;color: #444; float: left;}
+.content13 .cleft .ly input{width:190px;height: 30px;border: 1px solid #ddd; margin-left: 5px; padding-left: 10px; }
+.content13 .cleft .ly textarea{width: 890px; height: 140px; padding: 20px 10px; font-size: 14px; line-height: 28px; margin-top: 20px;border: 1px solid #ddd; }
+
+.content13 .cleft .fgx{width: 910px;height: 1px; background-color: #ddd; margin-top: 30px;}
+.content13 .cleft .submit{width: 120px; height: 40px; background: #0db1f0; font-size: 14px; line-height: 40px; color: #fff; margin-top: 10px; cursor:pointer;}
+.content13 .cleft .reset{width: 120px; height: 40px; background: #ccc; font-size: 14px; line-height: 40px; color: #fff; margin-left: 10px; margin-top: 10px; cursor:pointer;}
+.content13 .cleft .submit:hover{background-color: #0db1f0}
+.content13 .cleft .reset:hover{background-color: #0db1f0}
+
+.content13 .cright{width: 180px; height: 380px;}
+.content13 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content13 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content13 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content13 .cright .on{background: url("../images/tm2.png") repeat;}
+.content13 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content13 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content13 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content13 .cright .cr2 .ips{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content13 .cright .cr2 .ipb{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+
+
+.content13 .cleft h2{width: 970px; font-size: 30px;line-height: 36px;color: #217ac6;font-weight: normal;text-align: center;}
+.content13 .cleft .ly{width: 285px; height: 32px; margin: 30px 30px 0 0;}
+.content13 .cleft .ly .lyico{width: 32px; height: 32px; margin-right: 10px;}
+.content13 .cleft .ly span{font-size: 14px;line-height: 32px;color: #444; float: left;}
+.content13 .cleft .ly input{width:190px;height: 30px;border: 1px solid #ddd; margin-left: 5px; padding-left: 10px; }
+.content13 .cleft .ly textarea{width: 890px; height: 140px; padding: 20px 10px; font-size: 14px; line-height: 28px; margin-top: 20px;border: 1px solid #ddd; }
+.content13 .cleft .fgx{width: 910px;height: 1px; background-color: #ddd; margin-top: 30px;}
+
+.content13 .cleft .submit:hover{background-color: #0db1f0}
+.content13 .cleft .reset:hover{background-color: #0db1f0}
+.content13 .cright{width: 180px; height: 380px;}
+.content13 .cright .cr1{width: 170px;height: 40px;padding-left: 10px; background-color: #d93034; font-size: 16px;line-height: 40px;color: #fff;}
+.content13 .cright li{position: relative; width: 170px;height: 32px; background:url("../images/tm1.png") repeat; margin-top: 1px;padding-left: 10px;}
+.content13 .cright li a{display: block;width: 180px;height: 32px; font-size: 12px;line-height: 32px;color: #fff;}
+.content13 .cright .on{background: url("../images/tm2.png") repeat;}
+.content13 .cright li:hover{background: url("../images/tm2.png") repeat;}
+.content13 .cright li .tmico{position: absolute;right: 15px;top: 50%;margin-top: -5px; width: 6px;height: 10px; background: url("../images/cpico1.png") no-repeat;}
+.content13 .cright .cr2{position: relative; width: 170px;height: 36px; background-color: #444; margin-top: 10px; padding-left: 10px;}
+.content13 .cright .cr2 input[type=text]{width: 125px;height: 26px; margin-top: 5px; padding-left: 10px; font-size: 12px;line-height: 26px; color: #999;}
+.content13 .cright .cr2 input[type=button]{position: absolute;top: 0;right: 0; width: 34px;height: 36px; background: url("../images/cpico2.jpg") no-repeat;}
+
+.content10 .cleft .newsJc p{margin-top: 15px;}
+.newsJc{width: 760px; padding: 10px 20px; font-size: 14px; color: #555; line-height: 28px;}
+.newsJc p{margin-top: 30px;}
+.newsJc img{max-width: 750px; height:auto; width:expression(this.width > 750 ? "750px" : this.width); }
+
+.content10 .cleft .up,.content10 .cleft .down{padding-left: 16px;}
+.content10 .cleft .up span,.content10 .cleft .down span{font-size: 14px; color: #333;}
+.content10 .cleft .up a,.content10 .cleft .down a{font-size: 14px; color: #666;}
+.content10 .cleft a:hover{color: #217ac6;}
+
+
+.fy{width:970px; height:30px; margin:50px auto 20px auto; text-align:center;}
+.fy ul{width:100%;}
+.fy span,.fy a{display:inline-block; *display:inline; *zoom:1; padding:0 10px; height:28px; line-height:28px; text-align:center; font-size:14px; color:#333; border:1px solid #dadada; margin:0 5px;}
+.fy .on{background-color:#003586; color:#fff;}
+
+.footer{width: 100%;height: auto;background-color: #efefef; padding-top: 20px;}
+.footer .footmid{width: 1200px;height: 250px;margin: 0 auto; border-bottom: 1px #333 solid;}
+.footer .footmid ul{width: 1300px;}
+.footer .footmid li{width: 153px;height: 250px; float: left; }
+.footer .footmid li .sp1{font-size: 12px;line-height: 26px;color: #333;margin-bottom: 5px; font-weight: bold;}
+.footer .footmid li span{display: block; font-size: 12px;line-height: 22px;}
+.footer .footmid li span a{color: #666666;}
+.footer .footmid li span a:hover{color: #217ac6;text-decoration: underline;}
+.footer .footmid li .fright{position: relative; top:0; width: 1px;height: 90px; background-color: #444; margin-top: 6px;}
+.footer .footbt{width: 1200px;height: 110px; margin: 0 auto;}
+.footer .footbt .footlogo{width: 130px;height: 84px; padding-top:16px;}
+.footer .footbt .footlogo img{width: 130px;height: auto;margin-top: 20px;}
+.footer .footbt .fbmid{width: 600px; height: 80px; padding-top: 30px;}
+.footer .footbt .fbmid p{font-size: 12px;line-height: 20px; margin-left: 30px;}
+.footer .footbt .fbright{width: 275px;height: 75px; padding-top: 35px;}
+.footer .footbt .fbright li{position: relative; width: 30px;height: 30px;float: left; margin-left: 11px;}
+.footer .footbt .fbright li .wxtc{position: absolute;top: -87px; left: -20px; width: 77px; height: 77px;display: none;}
+
+
+/*鏂板鏍峰紡20170307*/
+.content10 .ch2 h2,.content9 .ch2 h2,.content11 .ch2 h2,.content8 .ch2 h2{position: relative; width: 758px; height: 40px; line-height: 40px; border: 1px solid #dedede; padding: 0 10px 0 40px; font-size: 14px; color: #555; background: url("../images/xwtb.jpg") no-repeat 10px center; background-color: #eeeeee;}
+.content10 .ch2 h2 a,.content9 .ch2 h2 a,.content11 .ch2 h2 a,.content8 .ch2 h2 a{color: #555;}
+.content10 .ch2 h2 .catname,.content9 .ch2 h2 .catname,.content11 .ch2 h2 .catname,.content8 .ch2 h2 .catname{font-size: 18px; color: #333; }
+.content10 .ch2 h2 em,.content9 .ch2 h2 em,.content11 .ch2 h2 em,.content8 .ch2 h2 em{position: absolute; left: 50px; bottom: -12px; display: block; width: 14px; height: 12px; background: url('../images/titlejt.jpg') no-repeat;}
+
+.content9 .ch2 h2,.content11 .ch2 h2,.content8 .ch2 h2{width: 920px;}
+
+.jshrz{width: 932px; height: 45px; line-height: 45px; background-color: #0091c9; font-size: 21px; color: #fff; padding: 0 20px; margin-bottom: 10px;}
+.cleft1{width: 970px; height: auto; overflow: hidden; }
+.cleft1 ul{width: 1000px;}
+.cleft1 ul li{float: left; width: 218px; height: 218px; margin-right:32px; margin-bottom: 20px;}
+.cleft1 ul li img{width: 218px; height: 170px; display: block;}
+.cleft1 ul li span{display: block; width: 198px; height: 48px;  line-height: 48px; padding: 0 10px; text-align: center; font-size: 14px; color: #fff; background-color: #217ac6;}
+
+.content01 .xlmenu,.content8 .xlmenu{min-height: 550px; *height:550px;}
+.content01 .xlmenu li,.content8 .xlmenu li{width: 180px; height: auto; padding-left:0;}
+.content01 .xlmenu .on,.content8 .xlmenu .on{background-color: #00b4ff;}
+.content01 .xlmenu li .a1,.content8 .xlmenu li .a1{padding-left: 10px; width: 170px;}
+.content01 .xlmenu li .hidemenu a,.content8 .xlmenu li .hidemenu a{width: 170px; height: auto; padding-left: 10px; background-color: #dedede; font-size: 12px; color: #666;}
+.content01 .xlmenu li .hidemenu a:hover,.content8 .xlmenu li .hidemenu a:hover{background-color: #ccc;}
+.content01 .xlmenu li .hidemenu .cur,.content8 .xlmenu li .hidemenu .cur{color: #217ac6;}
+.cleft1 ul li:hover span{background-color: #d93034;}
+
+.content11 .cleft table .hidetr td{ text-align: left; padding: 20px 50px; line-height: 30px;}
+.content11 .cleft table .on{background-color: #00b4ff; color: #fff;}
+.content11 .cleft table .on td{color: #fff;}
